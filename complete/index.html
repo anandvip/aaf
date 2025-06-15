@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech Investment Opportunities - 12 Scalable Business Models</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        .navigation {
+            background: #34495e;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .print-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: #229954;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .business-opportunity {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .business-opportunity.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .opportunity-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .opportunity-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .opportunity-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .metric-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .investment-stages {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .stages-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .stages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stage-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #3498db;
+        }
+
+        .stage-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .stage-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .revenue-streams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .revenue-item {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .revenue-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .revenue-amount {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .overview-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .overview-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .overview-card .market-size {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .overview-card .description {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+
+        .overview-card .investment-range {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .calculator {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .calculator h3 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .calc-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calc-input label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .calc-input input, .calc-input select {
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .calc-results {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result-item {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .result-value {
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        @media print {
+            .navigation, .calculator { display: none; }
+            .business-opportunity { display: block !important; page-break-after: always; }
+            body { background: white; }
+            .container { box-shadow: none; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .nav-links { justify-content: center; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .opportunity-title { font-size: 2rem; }
+            .content { padding: 1rem; }
+        }
+
+        .ecosystem-diagram {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .ecosystem-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .ecosystem-connections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .connection-node {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .connection-node:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AgriTech Investment Opportunities</h1>
+            <p>12 Scalable Business Models for the Global Farming Revolution</p>
+            
+            <div class="market-stats">
+                <div class="stat-card">
+                    <div class="stat-number">$24B</div>
+                    <div>India AgriTech Market</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14.4%</div>
+                    <div>Market CAGR</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$16B</div>
+                    <div>Global Investments 2024</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">600M+</div>
+                    <div>Farmers Addressable</div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navigation">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <button class="nav-btn active" onclick="showSection('overview')">Market Overview</button>
+                    <button class="nav-btn" onclick="showSection('opportunity1')">1. Khet Bao</button>
+                    <button class="nav-btn" onclick="showSection('opportunity2')">2. AgriFintech</button>
+                    <button class="nav-btn" onclick="showSection('opportunity3')">3. Input Intelligence</button>
+                    <button class="nav-btn" onclick="showSection('opportunity4')">4. Precision Tech</button>
+                    <button class="nav-btn" onclick="showSection('opportunity5')">5. Cold Storage</button>
+                    <button class="nav-btn" onclick="showSection('opportunity6')">6. Labor Platform</button>
+                    <button class="nav-btn" onclick="showSection('opportunity7')">7. Carbon Credits</button>
+                    <button class="nav-btn" onclick="showSection('opportunity8')">8. Insurance</button>
+                    <button class="nav-btn" onclick="showSection('opportunity9')">9. D2C Marketplace</button>
+                    <button class="nav-btn" onclick="showSection('opportunity10')">10. Data Analytics</button>
+                    <button class="nav-btn" onclick="showSection('opportunity11')">11. Equipment Mfg</button>
+                    <button class="nav-btn" onclick="showSection('opportunity12')">12. Export Platform</button>
+                </div>
+                <button class="print-btn" onclick="printCurrentSection()">Print Section</button>
+            </div>
+        </nav>
+
+        <main class="content">
+            <!-- Market Overview Section -->
+            <section id="overview" class="business-opportunity active">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">Market Foundation & Investment Landscape</h2>
+                    <p class="opportunity-subtitle">The agricultural revolution presents unprecedented investment opportunities</p>
+                </div>
+
+                <div class="overview-grid">
+                    <div class="overview-card" onclick="showSection('opportunity1')">
+                        <h3>🚜 Khet Bao - Equipment Sharing</h3>
+                        <div class="market-size">$18.15B Market</div>
+                        <div class="description">Technology-enabled tractor hire marketplace with pay-per-acre pricing and IoT integration</div>
+                        <div class="investment-range">$1-40M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity2')">
+                        <h3>💰 AgriFintech Integration Hub</h3>
+                        <div class="market-size">$25.24B Market</div>
+                        <div class="description">Comprehensive financial services with alternative credit scoring and parametric insurance</div>
+                        <div class="investment-range">$10-100M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity3')">
+                        <h3>🌱 Input Intelligence Marketplace</h3>
+                        <div class="market-size">$55B Market</div>
+                        <div class="description">AI-powered marketplace for agricultural inputs with precision recommendations</div>
+                        <div class="investment-range">$2-75M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity4')">
+                        <h3>🛰️ Precision Technology Services</h3>
+                        <div class="market-size">$11.6-17.8B Market</div>
+                        <div class="description">Drone services, IoT monitoring, and AI-powered advisory as-a-service</div>
+                        <div class="investment-range">$5-80M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity5')">
+                        <h3>❄️ Cold Storage Network</h3>
+                        <div class="market-size">$33.08B Market</div>
+                        <div class="description">Technology-optimized cold storage with AI-powered logistics optimization</div>
+                        <div class="investment-range">$15-200M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity6')">
+                        <h3>👥 Labor & Training Platform</h3>
+                        <div class="market-size">Growing Shortages</div>
+                        <div class="description">Digital platform connecting skilled workers with training and certification</div>
+                        <div class="investment-range">$3-60M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity7')">
+                        <h3>🌍 Carbon Credit Platform</h3>
+                        <div class="market-size">$31.2B Market</div>
+                        <div class="description">Sustainability platform monetizing carbon sequestration and regenerative practices</div>
+                        <div class="investment-range">$8-100M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity8')">
+                        <h3>🛡️ Integrated Insurance</h3>
+                        <div class="market-size">$5.9B Market</div>
+                        <div class="description">Parametric insurance with IoT-enabled automated claims processing</div>
+                        <div class="investment-range">$10-150M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity9')">
+                        <h3>🛒 D2C Marketplace</h3>
+                        <div class="market-size">15-25% Premiums</div>
+                        <div class="description">Direct farmer-to-consumer platform with integrated quality assurance</div>
+                        <div class="investment-range">$5-80M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity10')">
+                        <h3>📊 Data Analytics Platform</h3>
+                        <div class="market-size">$5-20B Market</div>
+                        <div class="description">Comprehensive agricultural data platform with AI-powered insights</div>
+                        <div class="investment-range">$8-100M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity11')">
+                        <h3>🏭 Equipment Manufacturing</h3>
+                        <div class="market-size">$169B Market</div>
+                        <div class="description">IoT-enabled equipment manufacturing optimized for sharing platforms</div>
+                        <div class="investment-range">$15-200M Investment Range</div>
+                    </div>
+
+                    <div class="overview-card" onclick="showSection('opportunity12')">
+                        <h3>🌐 Export & Trade Finance</h3>
+                        <div class="market-size">$1.6T Market</div>
+                        <div class="description">Digital platform facilitating agricultural exports with trade financing</div>
+                        <div class="investment-range">$8-150M Investment Range</div>
+                    </div>
+                </div>
+
+                <div class="ecosystem-diagram">
+                    <h3 class="ecosystem-title">Integrated Ecosystem Strategy</h3>
+                    <p>These 12 opportunities create a comprehensive agricultural ecosystem where each component enhances the value and stickiness of others, achieving 2-3x higher customer lifetime value.</p>
+                    
+                    <div class="ecosystem-connections">
+                        <div class="connection-node">Equipment Sharing provides operational data for all services</div>
+                        <div class="connection-node">Financial platform enables cross-platform payments</div>
+                        <div class="connection-node">Cold storage connects production to markets</div>
+                        <div class="connection-node">Data analytics optimizes all operations</div>
+                        <div class="connection-node">Insurance protects entire value chain</div>
+                        <div class="connection-node">Export platform scales internationally</div>
+                    </div>
+                </div>
+
+                <div class="calculator">
+                    <h3>Investment Return Calculator</h3>
+                    <div class="calc-inputs">
+                        <div class="calc-input">
+                            <label>Investment Amount ($M)</label>
+                            <input type="number" id="investment" value="50" onchange="calculateReturns()">
+                        </div>
+                        <div class="calc-input">
+                            <label>Time Horizon (Years)</label>
+                            <select id="timeframe" onchange="calculateReturns()">
+                                <option value="3">3 Years</option>
+                                <option value="5" selected>5 Years</option>
+                                <option value="7">7 Years</option>
+                                <option value="10">10 Years</option>
+                            </select>
+                        </div>
+                        <div class="calc-input">
+                            <label>Risk Profile</label>
+                            <select id="risk" onchange="calculateReturns()">
+                                <option value="conservative">Conservative</option>
+                                <option value="moderate" selected>Moderate</option>
+                                <option value="aggressive">Aggressive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-results">
+                        <div class="result-item">Projected Return: <span class="result-value" id="totalReturn">$125M</span></div>
+                        <div class="result-item">IRR: <span class="result-value" id="irr">25%</span></div>
+                        <div class="result-item">Multiple: <span class="result-value" id="multiple">2.5x</span></div>
+                        <div class="result-item">Market Share Capture: <span class="result-value" id="marketShare">1.2%</span></div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🎯 Total Addressable Market: $500B+ across 12 integrated opportunities with realistic 1-5% market share representing $5-25B revenue potential
+                </div>
+            </section>
+
+            <!-- Opportunity 1: Khet Bao -->
+            <section id="opportunity1" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🚜 Khet Bao - Intelligent Equipment Sharing Platform</h2>
+                    <p class="opportunity-subtitle">"Hum hain tayyār, khet banane ko!" - Technology-enabled tractor hire marketplace</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Opportunity</div>
+                        <div class="metric-value">$18.15B</div>
+                        <div class="metric-description">Indian equipment market growing at 8.5% CAGR</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Revenue Per Booking</div>
+                        <div class="metric-value">$150-400</div>
+                        <div class="metric-description">Average booking value with 35% gross margins</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Customer Acquisition</div>
+                        <div class="metric-value">$25-75</div>
+                        <div class="metric-description">Cost per farmer through village entrepreneurs</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Target LTV:CAC</div>
+                        <div class="metric-value">3:1</div>
+                        <div class="metric-description">Achievable within 18 months</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Business Model Innovation</h3>
+                    <p>Technology-enabled tractor hire marketplace combining pay-per-acre pricing, expert drivers, WhatsApp/SMS booking, and IoT-enabled fleet management. The platform operates as a hybrid B2B2C marketplace connecting equipment owners with farmers while providing comprehensive service layers.</p>
+                    
+                    <div class="revenue-streams">
+                        <div class="revenue-item">
+                            <div class="revenue-title">Platform Commissions</div>
+                            <div class="revenue-amount">10-15% of rental fees</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">IoT Services</div>
+                            <div class="revenue-amount">$20-50/month per tractor</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Maintenance Contracts</div>
+                            <div class="revenue-amount">15-25% service margins</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Insurance Facilitation</div>
+                            <div class="revenue-amount">2-5% commission</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Investment Stages & Requirements</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Seed Stage</div>
+                            <div class="stage-amount">$1-3M</div>
+                            <p>Platform development, pilot operations in 2-3 states, initial team building</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series A</div>
+                            <div class="stage-amount">$8-15M</div>
+                            <p>Fleet expansion, technology scaling, market penetration acceleration</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B</div>
+                            <div class="stage-amount">$25-40M</div>
+                            <p>National expansion, advanced analytics, international market entry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Technology Stack</h3>
+                    <ul>
+                        <li><strong>Mobile Applications:</strong> Offline-capable iOS/Android apps with multilingual support</li>
+                        <li><strong>GPS & IoT Integration:</strong> Real-time equipment tracking and utilization monitoring</li>
+                        <li><strong>WhatsApp Business API:</strong> Seamless booking through familiar messaging platform</li>
+                        <li><strong>Payment Processing:</strong> UPI, cash, and digital wallet integration</li>
+                        <li><strong>AI-Powered Analytics:</strong> Demand forecasting and utilization optimization</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Competitive Advantages</h3>
+                    <ul>
+                        <li><strong>Network Effects:</strong> Equipment density creates value for all participants</li>
+                        <li><strong>Data Advantage:</strong> Usage patterns inform optimization and expansion</li>
+                        <li><strong>Integrated Services:</strong> Comprehensive solution vs. fragmented offerings</li>
+                        <li><strong>Local Expertise:</strong> Village-level agent networks provide trust and support</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    💡 Success Reference: Hello Tractor achieved 95% farmer dependency rates while serving 500,000+ farmers across Africa
+                </div>
+            </section>
+
+            <!-- Opportunity 2: AgriFintech -->
+            <section id="opportunity2" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">💰 AgriFintech Integration Hub</h2>
+                    <p class="opportunity-subtitle">Comprehensive financial services embedded within agricultural ecosystem</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Opportunity</div>
+                        <div class="metric-value">$25.24B</div>
+                        <div class="metric-description">Agricultural fintech market growing at 10.1% CAGR</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Lending Margins</div>
+                        <div class="metric-value">200-400bps</div>
+                        <div class="metric-description">Above funding costs with alt credit scoring</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Insurance Commissions</div>
+                        <div class="metric-value">20-30%</div>
+                        <div class="metric-description">Of premium income ($30-100 per acre)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Default Rates</div>
+                        <div class="metric-value">2-5%</div>
+                        <div class="metric-description">Using alternative data and IoT monitoring</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Financial Products Portfolio</h3>
+                    <div class="revenue-streams">
+                        <div class="revenue-item">
+                            <div class="revenue-title">Equipment Financing</div>
+                            <div class="revenue-amount">Usage-based lending</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Parametric Insurance</div>
+                            <div class="revenue-amount">Automated claims</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Supply Chain Finance</div>
+                            <div class="revenue-amount">1-5% factoring fees</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Payment Processing</div>
+                            <div class="revenue-amount">0.5-2% transaction fees</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Investment Requirements</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A</div>
+                            <div class="stage-amount">$10-20M</div>
+                            <p>Lending operations setup, regulatory compliance, initial loan portfolio</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B</div>
+                            <div class="stage-amount">$30-50M</div>
+                            <p>Scale lending portfolio, insurance partnerships, technology advancement</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C</div>
+                            <div class="stage-amount">$75-100M</div>
+                            <p>National expansion, international markets, advanced financial products</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Alternative Credit Scoring Innovation</h3>
+                    <ul>
+                        <li><strong>Equipment Usage Data:</strong> Utilization patterns indicate farming activity and income potential</li>
+                        <li><strong>Satellite Imagery:</strong> Crop health and acreage verification for loan sizing</li>
+                        <li><strong>Mobile Transaction History:</strong> Digital payment patterns show financial behavior</li>
+                        <li><strong>Social Network Analysis:</strong> Community connections and reputation scoring</li>
+                        <li><strong>IoT Integration:</strong> Real-time farming activity and asset monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    🎯 Target: Achieve 200,000+ active borrowers within 24 months with average loan size of $2,000-5,000
+                </div>
+            </section>
+
+            <!-- Opportunity 3: Input Intelligence -->
+            <section id="opportunity3" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🌱 Agricultural Input Intelligence Marketplace</h2>
+                    <p class="opportunity-subtitle">AI-powered marketplace transforming input procurement and application</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Size</div>
+                        <div class="metric-value">$55B</div>
+                        <div class="metric-description">Indian agricultural inputs market annually</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Commission Rate</div>
+                        <div class="metric-value">15-25%</div>
+                        <div class="metric-description">On input sales through platform</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Advisory Revenue</div>
+                        <div class="metric-value">$50-200</div>
+                        <div class="metric-description">Annual subscription per farmer</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Precision Services</div>
+                        <div class="metric-value">$5-15</div>
+                        <div class="metric-description">Per acre for implementation</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">AI-Powered Intelligence Platform</h3>
+                    <ul>
+                        <li><strong>Computer Vision:</strong> Crop health assessment through smartphone cameras</li>
+                        <li><strong>Satellite Integration:</strong> Field mapping and vegetation index monitoring</li>
+                        <li><strong>Machine Learning:</strong> Personalized recommendations based on local conditions</li>
+                        <li><strong>Equipment Integration:</strong> Application tracking through IoT sensors</li>
+                        <li><strong>Weather Analytics:</strong> Timing optimization for input application</li>
+                    </ul>
+                </div>
+
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <div class="revenue-title">Marketplace Commission</div>
+                        <div class="revenue-amount">15-25% on sales</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Premium Advisory</div>
+                        <div class="revenue-amount">$50-200 annually</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Data Monetization</div>
+                        <div class="revenue-amount">Insights to manufacturers</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Precision Application</div>
+                        <div class="revenue-amount">$5-15 per acre</div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Scaling Strategy</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Seed ($2-5M)</div>
+                            <div class="stage-amount">High-Value Focus</div>
+                            <p>Start with fruits and vegetables for higher margins and tech adoption</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($10-25M)</div>
+                            <div class="stage-amount">Commodity Expansion</div>
+                            <p>Scale to grains and pulses with inventory financing</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($40-75M)</div>
+                            <div class="stage-amount">National Scale</div>
+                            <p>Full geographic coverage with international expansion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    📈 Growth Target: $100M GMV within 3 years through integrated equipment and advisory services
+                </div>
+            </section>
+
+            <!-- Opportunity 4: Precision Technology -->
+            <section id="opportunity4" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🛰️ Precision Technology Services Network</h2>
+                    <p class="opportunity-subtitle">Technology-as-a-Service for modern agriculture operations</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Opportunity</div>
+                        <div class="metric-value">$11.6-17.8B</div>
+                        <div class="metric-description">Agriculture TaaS market by 2032</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Drone Services</div>
+                        <div class="metric-value">$100-500</div>
+                        <div class="metric-description">Per acre for mapping/spraying</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">IoT Monitoring</div>
+                        <div class="metric-value">$10-30</div>
+                        <div class="metric-description">Per acre annually</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">LTV Increase</div>
+                        <div class="metric-value">150-300%</div>
+                        <div class="metric-description">Through cross-selling integration</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Comprehensive Service Portfolio</h3>
+                    <div class="revenue-streams">
+                        <div class="revenue-item">
+                            <div class="revenue-title">Drone Operations</div>
+                            <div class="revenue-amount">Mapping & Spraying</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">IoT Monitoring</div>
+                            <div class="revenue-amount">Sensors & Analytics</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Soil Testing</div>
+                            <div class="revenue-amount">Field Services</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Water Management</div>
+                            <div class="revenue-amount">Optimization Systems</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Integration Benefits</h3>
+                    <ul>
+                        <li><strong>Equipment Synergy:</strong> Sharing platform data enhances precision services</li>
+                        <li><strong>Bundle Savings:</strong> 20-30% cost reduction vs. standalone services</li>
+                        <li><strong>Data Network Effects:</strong> Service quality improves with scale</li>
+                        <li><strong>Cross-Selling:</strong> Increases customer lifetime value significantly</li>
+                    </ul>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Asset-Light Scaling Model</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($5-15M)</div>
+                            <div class="stage-amount">Network Development</div>
+                            <p>Certified operator network, technology platform</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($20-40M)</div>
+                            <div class="stage-amount">Advanced Analytics</div>
+                            <p>AI capabilities, autonomous systems integration</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($50-80M)</div>
+                            <div class="stage-amount">Global Expansion</div>
+                            <p>International markets, enterprise solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🚀 Revenue Model: Subscription-based services providing predictable recurring revenue with high scalability
+                </div>
+            </section>
+
+            <!-- Opportunity 5: Cold Storage -->
+            <section id="opportunity5" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">❄️ Cold Storage and Logistics Optimization Network</h2>
+                    <p class="opportunity-subtitle">Technology-optimized supply chain reducing 14-30% food loss</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Size</div>
+                        <div class="metric-value">$33.08B</div>
+                        <div class="metric-description">Cold storage market opportunity</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Storage Revenue</div>
+                        <div class="metric-value">$50-200</div>
+                        <div class="metric-description">Per tonne monthly</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Logistics Premium</div>
+                        <div class="metric-value">$0.5-2</div>
+                        <div class="metric-description">Per kg-km with temperature control</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Food Loss Reduction</div>
+                        <div class="metric-value">14-30%</div>
+                        <div class="metric-description">Through technology integration</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Technology Integration Stack</h3>
+                    <ul>
+                        <li><strong>IoT Sensors:</strong> Real-time temperature, humidity, and quality monitoring</li>
+                        <li><strong>Blockchain Traceability:</strong> End-to-end supply chain transparency</li>
+                        <li><strong>AI Demand Forecasting:</strong> Optimization of storage and logistics</li>
+                        <li><strong>Equipment Platform Integration:</strong> Harvest timing optimization</li>
+                        <li><strong>Quality Assurance Systems:</strong> Automated grading and certification</li>
+                    </ul>
+                </div>
+
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <div class="revenue-title">Storage Fees</div>
+                        <div class="revenue-amount">$50-200/tonne/month</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Logistics Services</div>
+                        <div class="revenue-amount">Premium pricing</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Quality Certification</div>
+                        <div class="revenue-amount">$100-500/batch</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Inventory Financing</div>
+                        <div class="revenue-amount">8-15% annual rates</div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Network Development Strategy</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($15-30M)</div>
+                            <div class="stage-amount">Foundation Build</div>
+                            <p>Initial facilities, technology platform development</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($50-100M)</div>
+                            <div class="stage-amount">Network Expansion</div>
+                            <p>Regional coverage, automation systems</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($100-200M)</div>
+                            <div class="stage-amount">National Coverage</div>
+                            <p>Complete network, international partnerships</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    📦 Competitive Moat: Network density effects and data advantages create significant barriers to entry
+                </div>
+            </section>
+
+            <!-- Opportunity 6: Labor Platform -->
+            <section id="opportunity6" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">👥 Agricultural Labor and Training Platform</h2>
+                    <p class="opportunity-subtitle">Digital workforce coordination with 60% productivity improvements</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Labor Shortage</div>
+                        <div class="metric-value">Growing</div>
+                        <div class="metric-description">60% productivity improvement potential</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Platform Commission</div>
+                        <div class="metric-value">5-15%</div>
+                        <div class="metric-description">Of worker wages</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Training Revenue</div>
+                        <div class="metric-value">$100-500</div>
+                        <div class="metric-description">Per certification program</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Skills Premium</div>
+                        <div class="metric-value">20-30%</div>
+                        <div class="metric-description">Wage premiums for certified workers</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Comprehensive Workforce Solution</h3>
+                    <div class="revenue-streams">
+                        <div class="revenue-item">
+                            <div class="revenue-title">Worker Placement</div>
+                            <div class="revenue-amount">5-15% commission</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Skills Training</div>
+                            <div class="revenue-amount">$100-500/certification</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">HR Services</div>
+                            <div class="revenue-amount">$50-200/month/farm</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Premium Placements</div>
+                            <div class="revenue-amount">Skilled worker premiums</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Equipment Platform Integration</h3>
+                    <ul>
+                        <li><strong>Operator Training:</strong> Certified equipment operators for sharing platform</li>
+                        <li><strong>Maintenance Technicians:</strong> Skilled workforce for equipment service</li>
+                        <li><strong>Performance Data:</strong> Worker ratings improve matching algorithms</li>
+                        <li><strong>Workforce Management:</strong> Reduced complexity for farmers</li>
+                    </ul>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Platform Development Path</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($3-8M)</div>
+                            <div class="stage-amount">Platform Launch</div>
+                            <p>Core platform, initial training programs</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($15-30M)</div>
+                            <div class="stage-amount">Scale & Certify</div>
+                            <p>Geographic expansion, advanced certifications</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($40-60M)</div>
+                            <div class="stage-amount">Enterprise Solutions</div>
+                            <p>International markets, large-scale operations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🎯 Target: 100,000+ certified workers within 36 months with average 25% wage premium
+                </div>
+            </section>
+
+            <!-- Opportunity 7: Carbon Credits -->
+            <section id="opportunity7" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🌍 Sustainable Agriculture and Carbon Credit Platform</h2>
+                    <p class="opportunity-subtitle">Monetizing regenerative practices with $5-50 per tonne carbon potential</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Size</div>
+                        <div class="metric-value">$31.2B</div>
+                        <div class="metric-description">Climate-smart agriculture by 2030</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Carbon Credit Value</div>
+                        <div class="metric-value">$5-50</div>
+                        <div class="metric-description">Per tonne CO2 equivalent</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Platform Commission</div>
+                        <div class="metric-value">15-20%</div>
+                        <div class="metric-description">On carbon credit sales</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Produce Premium</div>
+                        <div class="metric-value">10-30%</div>
+                        <div class="metric-description">For sustainable practices</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Sustainability Technology Stack</h3>
+                    <ul>
+                        <li><strong>Satellite Monitoring:</strong> Practice verification and carbon sequestration measurement</li>
+                        <li><strong>Blockchain Tracking:</strong> Immutable credit generation and trading records</li>
+                        <li><strong>IoT Verification:</strong> Equipment data confirms implementation of practices</li>
+                        <li><strong>AI Optimization:</strong> Recommendations for maximum carbon and profit impact</li>
+                    </ul>
+                </div>
+
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <div class="revenue-title">Carbon Credit Sales</div>
+                        <div class="revenue-amount">15-20% commission</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Sustainability Consulting</div>
+                        <div class="revenue-amount">$50-200/acre</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Certification Services</div>
+                        <div class="revenue-amount">$5,000-20,000/project</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Premium Market Access</div>
+                        <div class="revenue-amount">10-30% price premiums</div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Market Development Strategy</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($8-15M)</div>
+                            <div class="stage-amount">Platform Development</div>
+                            <p>Technology platform, pilot projects, initial verification</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($25-50M)</div>
+                            <div class="stage-amount">Scale Verification</div>
+                            <p>Automated systems, corporate partnerships</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($60-100M)</div>
+                            <div class="stage-amount">Global Markets</div>
+                            <p>International expansion, enterprise solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🌱 Market Timing: Growing corporate ESG commitments create strong demand for verified agricultural carbon credits
+                </div>
+            </section>
+
+            <!-- Opportunity 8: Insurance -->
+            <section id="opportunity8" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🛡️ Integrated Agricultural Insurance Platform</h2>
+                    <p class="opportunity-subtitle">Parametric insurance with IoT-enabled automated claims processing</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Size</div>
+                        <div class="metric-value">$5.9B</div>
+                        <div class="metric-description">Parametric insurance growing at 6.5% CAGR</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Weather Insurance</div>
+                        <div class="metric-value">$30-100</div>
+                        <div class="metric-description">Per acre coverage</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Equipment Coverage</div>
+                        <div class="metric-value">3-8%</div>
+                        <div class="metric-description">Of equipment value annually</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Claims Reduction</div>
+                        <div class="metric-value">40-60%</div>
+                        <div class="metric-description">Cost reduction through automation</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Comprehensive Insurance Portfolio</h3>
+                    <div class="revenue-streams">
+                        <div class="revenue-item">
+                            <div class="revenue-title">Weather Index</div>
+                            <div class="revenue-amount">$30-100/acre</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Equipment Breakdown</div>
+                            <div class="revenue-amount">3-8% of value</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Crop Yield Protection</div>
+                            <div class="revenue-amount">$50-200/acre</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Liability Coverage</div>
+                            <div class="revenue-amount">$500-2,000 annually</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Technology Advantages</h3>
+                    <ul>
+                        <li><strong>Real-Time Monitoring:</strong> IoT sensors provide continuous risk assessment</li>
+                        <li><strong>Automated Claims:</strong> Parametric triggers eliminate lengthy claims processes</li>
+                        <li><strong>Integrated Data:</strong> Equipment platform provides comprehensive risk profile</li>
+                        <li><strong>Predictive Analytics:</strong> AI-powered risk modeling and pricing optimization</li>
+                    </ul>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Capital Requirements</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($10-20M)</div>
+                            <div class="stage-amount">Product Development</div>
+                            <p>Platform, regulatory approvals, initial reserves</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($30-60M)</div>
+                            <div class="stage-amount">Scale Operations</div>
+                            <p>Reserve capital, reinsurance partnerships</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($75-150M)</div>
+                            <div class="stage-amount">Geographic Expansion</div>
+                            <p>New markets, advanced product development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    ⚡ Competitive Advantage: 40-60% lower claims processing costs through integrated IoT monitoring and automation
+                </div>
+            </section>
+
+            <!-- Opportunity 9: D2C Marketplace -->
+            <section id="opportunity9" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🛒 Direct-to-Consumer Agricultural Marketplace</h2>
+                    <p class="opportunity-subtitle">Farm-to-fork platform with 15-25% price premiums for quality produce</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Price Premium</div>
+                        <div class="metric-value">15-25%</div>
+                        <div class="metric-description">For direct-to-consumer sales</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Commission Rate</div>
+                        <div class="metric-value">5-15%</div>
+                        <div class="metric-description">Of transaction value</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Subscription Revenue</div>
+                        <div class="metric-value">$50-200</div>
+                        <div class="metric-description">Monthly per customer</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Logistics Fee</div>
+                        <div class="metric-value">$2-8</div>
+                        <div class="metric-description">Per delivery</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Integrated Ecosystem Benefits</h3>
+                    <ul>
+                        <li><strong>Harvest Optimization:</strong> Equipment data enables perfect timing for quality</li>
+                        <li><strong>Quality Assurance:</strong> Cold storage network maintains freshness</li>
+                        <li><strong>Financial Support:</strong> Platform enables farmer cash flow management</li>
+                        <li><strong>Traceability:</strong> Complete farm-to-fork transparency for consumers</li>
+                    </ul>
+                </div>
+
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <div class="revenue-title">Transaction Commission</div>
+                        <div class="revenue-amount">5-15% of sales</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Subscription Boxes</div>
+                        <div class="revenue-amount">$50-200/month</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Premium Certification</div>
+                        <div class="revenue-amount">10-30% premiums</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Logistics Services</div>
+                        <div class="revenue-amount">$2-8/delivery</div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Market Development</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($5-12M)</div>
+                            <div class="stage-amount">Platform Launch</div>
+                            <p>Consumer platform, initial market penetration</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($20-40M)</div>
+                            <div class="stage-amount">Logistics Network</div>
+                            <p>Delivery infrastructure, quality systems</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($50-80M)</div>
+                            <div class="stage-amount">Scale & Enterprise</div>
+                            <p>National expansion, B2B customers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🚚 Value Proposition: Complete integration from production optimization to consumer delivery creates unique value chain
+                </div>
+            </section>
+
+            <!-- Opportunity 10: Data Analytics -->
+            <section id="opportunity10" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">📊 Agricultural Data Analytics and Advisory Platform</h2>
+                    <p class="opportunity-subtitle">Comprehensive intelligence platform transforming farming decisions</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Market Opportunity</div>
+                        <div class="metric-value">$5-20B</div>
+                        <div class="metric-description">Agricultural data services market</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">SaaS Revenue</div>
+                        <div class="metric-value">$500-2,000</div>
+                        <div class="metric-description">Annual subscription per farm</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Enterprise Contracts</div>
+                        <div class="metric-value">$50K-500K</div>
+                        <div class="metric-description">Annual enterprise analytics</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Consulting Rate</div>
+                        <div class="metric-value">$100-300</div>
+                        <div class="metric-description">Per hour specialized analysis</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Unique Data Advantage</h3>
+                    <ul>
+                        <li><strong>Equipment Usage:</strong> Real-time operational data from tractor sharing platform</li>
+                        <li><strong>IoT Integration:</strong> Comprehensive sensor data across agricultural operations</li>
+                        <li><strong>Financial Patterns:</strong> Credit and payment data for farm performance analysis</li>
+                        <li><strong>Supply Chain Data:</strong> Input usage and output quality tracking</li>
+                        <li><strong>Market Intelligence:</strong> Pricing and demand patterns across regions</li>
+                    </ul>
+                </div>
+
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <div class="revenue-title">Farm Subscriptions</div>
+                        <div class="revenue-amount">$500-2,000 annually</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Enterprise Analytics</div>
+                        <div class="revenue-amount">$50K-500K annually</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">API Services</div>
+                        <div class="revenue-amount">Usage-based pricing</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Custom Consulting</div>
+                        <div class="revenue-amount">$100-300/hour</div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Platform Development</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($8-15M)</div>
+                            <div class="stage-amount">Analytics Engine</div>
+                            <p>Advanced analytics, customer acquisition</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($25-50M)</div>
+                            <div class="stage-amount">AI Capabilities</div>
+                            <p>Machine learning, enterprise solutions</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($60-100M)</div>
+                            <div class="stage-amount">Global Expansion</div>
+                            <p>International markets, acquisition strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🧠 Competitive Moat: Unique integrated dataset from agricultural platform creates unparalleled insights
+                </div>
+            </section>
+
+            <!-- Opportunity 11: Equipment Manufacturing -->
+            <section id="opportunity11" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🏭 Agricultural Equipment Manufacturing and IoT Integration</h2>
+                    <p class="opportunity-subtitle">Smart, connected machinery optimized for sharing platforms</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Global Market</div>
+                        <div class="metric-value">$169B</div>
+                        <div class="metric-description">Agricultural equipment market</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Smart Tractors</div>
+                        <div class="metric-value">$15K-30K</div>
+                        <div class="metric-description">vs. $50K+ imported alternatives</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Gross Margins</div>
+                        <div class="metric-value">20-35%</div>
+                        <div class="metric-description">Equipment sales margins</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">IoT Subscriptions</div>
+                        <div class="metric-value">$20-50</div>
+                        <div class="metric-description">Monthly per unit</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Product Strategy</h3>
+                    <div class="revenue-streams">
+                        <div class="revenue-item">
+                            <div class="revenue-title">Smart Tractors</div>
+                            <div class="revenue-amount">$15K-30K per unit</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Modular Implements</div>
+                            <div class="revenue-amount">$2K-8K per unit</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Retrofit IoT Kits</div>
+                            <div class="revenue-amount">$500-2K per install</div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-title">Data Services</div>
+                            <div class="revenue-amount">Subscription revenue</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Manufacturing Innovation</h3>
+                    <ul>
+                        <li><strong>Affordability Focus:</strong> 50-70% cost reduction vs. imported alternatives</li>
+                        <li><strong>IoT Integration:</strong> Built-in connectivity and data generation</li>
+                        <li><strong>Sharing Optimization:</strong> Designed for high utilization and multiple operators</li>
+                        <li><strong>Modular Design:</strong> Flexible configurations for different farming needs</li>
+                        <li><strong>Local Manufacturing:</strong> Reduced costs and faster service support</li>
+                    </ul>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">Manufacturing Scale-Up</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($15-30M)</div>
+                            <div class="stage-amount">R&D & Pilot</div>
+                            <p>Product development, pilot manufacturing</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($50-100M)</div>
+                            <div class="stage-amount">Scale Production</div>
+                            <p>Manufacturing facilities, distribution network</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($100-200M)</div>
+                            <div class="stage-amount">Global Markets</div>
+                            <p>International expansion, advanced automation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🔧 Revenue Model: Diversified income from equipment sales, IoT subscriptions, maintenance, and data monetization
+                </div>
+            </section>
+
+            <!-- Opportunity 12: Export Platform -->
+            <section id="opportunity12" class="business-opportunity">
+                <div class="opportunity-header">
+                    <h2 class="opportunity-title">🌐 Agricultural Export and Trade Finance Platform</h2>
+                    <p class="opportunity-subtitle">Digital platform facilitating $1.6T global agricultural trade</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Global Trade</div>
+                        <div class="metric-value">$1.6T</div>
+                        <div class="metric-description">Agricultural trade market annually</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Trade Financing</div>
+                        <div class="metric-value">200-500bps</div>
+                        <div class="metric-description">Above funding costs</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Service Fees</div>
+                        <div class="metric-value">5-10%</div>
+                        <div class="metric-description">Of export value</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Market Intelligence</div>
+                        <div class="metric-value">$1K-5K</div>
+                        <div class="metric-description">Monthly subscriptions</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Integrated Export Solution</h3>
+                    <ul>
+                        <li><strong>Production Data:</strong> Domestic platform provides quality verification</li>
+                        <li><strong>Cold Storage Network:</strong> Export preparation and quality maintenance</li>
+                        <li><strong>Financial Platform:</strong> Trade financing and payment processing</li>
+                        <li><strong>Documentation:</strong> Automated compliance and certification</li>
+                        <li><strong>Logistics Coordination:</strong> End-to-end shipping management</li>
+                    </ul>
+                </div>
+
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <div class="revenue-title">Trade Financing</div>
+                        <div class="revenue-amount">200-500bps margins</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Documentation Fees</div>
+                        <div class="revenue-amount">5-10% export value</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Logistics Coordination</div>
+                        <div class="revenue-amount">$100-500/shipment</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="revenue-title">Market Intelligence</div>
+                        <div class="revenue-amount">$1K-5K monthly</div>
+                    </div>
+                </div>
+
+                <div class="investment-stages">
+                    <h3 class="stages-title">International Development</h3>
+                    <div class="stages-container">
+                        <div class="stage-card">
+                            <div class="stage-name">Series A ($8-20M)</div>
+                            <div class="stage-amount">Platform Development</div>
+                            <p>Technology platform, regulatory compliance</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series B ($30-60M)</div>
+                            <div class="stage-amount">Trade Capital</div>
+                            <p>Financing capital, international partnerships</p>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-name">Series C ($75-150M)</div>
+                            <div class="stage-amount">Global Expansion</div>
+                            <p>Multiple markets, enterprise solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    🌍 Integration Strategy: Domestic agricultural platform provides unique end-to-end visibility for international trade
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 AgriTech Investment Opportunities. Transforming global agriculture through technology-driven solutions.</p>
+            <p>Contact us for detailed investment discussions and due diligence materials.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.business-opportunity');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update active nav button
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Print functionality
+        function printCurrentSection() {
+            window.print();
+        }
+
+        // Investment calculator
+        function calculateReturns() {
+            const investment = parseFloat(document.getElementById('investment').value);
+            const timeframe = parseInt(document.getElementById('timeframe').value);
+            const risk = document.getElementById('risk').value;
+
+            let multiplier, irr, marketShare;
+
+            switch(risk) {
+                case 'conservative':
+                    multiplier = 1.8 + (timeframe * 0.2);
+                    irr = 15 + (timeframe * 1);
+                    marketShare = 0.8;
+                    break;
+                case 'moderate':
+                    multiplier = 2.2 + (timeframe * 0.3);
+                    irr = 22 + (timeframe * 1.5);
+                    marketShare = 1.2;
+                    break;
+                case 'aggressive':
+                    multiplier = 3.0 + (timeframe * 0.4);
+                    irr = 30 + (timeframe * 2);
+                    marketShare = 2.0;
+                    break;
+            }
+
+            const totalReturn = investment * multiplier;
+
+            document.getElementById('totalReturn').textContent = `$${totalReturn.toFixed(0)}M`;
+            document.getElementById('irr').textContent = `${irr.toFixed(0)}%`;
+            document.getElementById('multiple').textContent = `${multiplier.toFixed(1)}x`;
+            document.getElementById('marketShare').textContent = `${marketShare.toFixed(1)}%`;
+        }
+
+        // Initialize calculator
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateReturns();
+        });
+
+        // Add smooth scrolling for navigation
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = document.querySelector('.content');
+                content.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add click handlers for overview cards
+        document.querySelectorAll('.overview-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const clickEvent = new Event('click');
+                clickEvent.target = this;
+                this.onclick(clickEvent);
+            });
+        });
+    </script>
+</body>
+</html>
