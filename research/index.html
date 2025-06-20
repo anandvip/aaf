@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive Agricultural Survey Report - Pehowa Tehsil, Kurukshetra District, Haryana</title>
-    <!--
-    Date Created: June 20, 2025
-    Tool: Claude Sonnet 4
-    Prompt 1: User uploaded comprehensive AgriTech research documents including multiple PDFs containing detailed research about Pehowa Tehsil, agricultural machinery infrastructure, demographic analysis, and village profiles. Asked to convert the PDF research report into one long webpage keeping everything intact, organizing by importance, and ensuring all links open in new tabs.
-    Prompt 2: User requested to fix the title from "director anand ago farms" to "owner aaf" and create a comprehensive webpage consolidating all research findings.
-    -->
+    <title>Agricultural Survey Report: Pehowa Tehsil</title>
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #10b981;
+            --bg-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --secondary-color: #94a3b8;
+            --accent-color: #34d399;
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,731 +38,516 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+
+        body[lang="hi"] {
+            font-family: 'Noto Sans Devanagari', 'Mukti', 'Gargi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
-            min-height: 100vh;
+            padding: 0 1rem;
         }
 
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: white;
-            padding: 3rem;
+            padding: 2rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s ease-in-out infinite;
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header .subtitle {
-            font-size: 1.3rem;
+        header p {
+            font-size: 1.1rem;
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .research-badge {
-            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            margin: 1.5rem auto;
-            display: inline-block;
-            font-weight: bold;
-            position: relative;
-            z-index: 1;
-        }
-
-        .download-section {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .download-btn {
-            background: white;
-            color: #e74c3c;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .content {
-            padding: 2rem;
-        }
-
-        .nav-toc {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        /* Navigation */
+        nav {
+            background: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
-            top: 20px;
+            top: 0;
             z-index: 100;
+            backdrop-filter: blur(8px);
         }
 
-        .nav-toc h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
 
-        .nav-toc ul {
+        .nav-links {
+            display: flex;
+            gap: 2rem;
             list-style: none;
-            padding: 0;
+            flex-wrap: wrap;
         }
 
-        .nav-toc li {
-            margin: 0.5rem 0;
-        }
-
-        .nav-toc a {
-            color: #3498db;
+        .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
         }
 
-        .nav-toc a:hover {
-            color: #2980b9;
-            padding-left: 10px;
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background: var(--border-color);
         }
 
-        .section {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 5px solid #3498db;
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
         }
 
-        .section h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
         }
 
-        .section h3 {
-            font-size: 1.5rem;
-            color: #34495e;
-            margin: 2rem 0 1rem 0;
-            border-left: 4px solid #f39c12;
-            padding-left: 1rem;
+        .btn:hover {
+            background: var(--surface-color);
+            border-color: var(--primary-color);
         }
 
-        .section h4 {
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
             font-size: 1.2rem;
-            color: #2c3e50;
-            margin: 1.5rem 0 0.5rem 0;
-            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-            color: white;
+        .theme-toggle:hover {
+            background: var(--border-color);
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            background: var(--surface-color);
+            margin: 2rem 0;
             padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            font-weight: bold;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
         }
 
-        .highlight-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+        h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
         }
 
-        .stat-card {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #3498db;
-            transition: transform 0.3s ease;
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        ul, ol {
+            color: var(--text-secondary);
+            margin: 1rem 0;
+            padding-left: 1.5rem;
         }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #e74c3c;
+        li {
             margin-bottom: 0.5rem;
         }
 
-        .stat-label {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-
-        .village-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .village-card {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid #3498db;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .village-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            border-radius: 0 0 0 100px;
-            opacity: 0.1;
-        }
-
-        .village-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .tier-1 { border-left-color: #e74c3c; }
-        .tier-2 { border-left-color: #f39c12; }
-        .tier-3 { border-left-color: #27ae60; }
-
-        .village-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .village-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .tier-badge {
-            background: #3498db;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .tier-1 .tier-badge { background: #e74c3c; }
-        .tier-2 .tier-badge { background: #f39c12; }
-        .tier-3 .tier-badge { background: #27ae60; }
-
-        .table-responsive {
+        /* Tables */
+        .table-container {
             overflow-x: auto;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         th, td {
-            padding: 1rem;
+            padding: 0.75rem 1rem;
             text-align: left;
-            border-bottom: 1px solid #ecf0f1;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background: #34495e;
+            background: var(--primary-color);
             color: white;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        tr:nth-child(even) {
-            background: #f8f9fa;
+        td {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
-        tr:hover {
-            background: #e8f4fd;
+        tr:hover td {
+            background: var(--border-color);
         }
 
-        .methodology-section {
-            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
 
-        .credentials-box {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        .stat-card {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
         }
 
-        .reference-list {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 1rem 0;
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
         }
 
-        .reference-list ol {
-            padding-left: 1.5rem;
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
 
-        .reference-list li {
-            margin: 0.5rem 0;
-            line-height: 1.6;
-        }
-
-        .reference-list a {
-            color: #3498db;
+        /* Links */
+        a {
+            color: var(--primary-color);
             text-decoration: none;
         }
 
-        .reference-list a:hover {
+        a:hover {
             text-decoration: underline;
         }
 
-        ul, ol {
-            padding-left: 2rem;
-            margin: 1rem 0;
-        }
-
-        li {
-            margin: 0.5rem 0;
-        }
-
-        .implementation-timeline {
-            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-        }
-
-        .phase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .phase-card {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .footer {
-            background: #2c3e50;
-            color: white;
+        /* Footer */
+        footer {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
             text-align: center;
-            padding: 3rem;
-            margin-top: 3rem;
+            color: var(--text-secondary);
+            margin-top: 4rem;
         }
 
-        .contact-info {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.3);
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .header h1 { font-size: 2rem; }
-            .content { padding: 1rem; }
-            .village-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .nav-toc { position: relative; }
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Print styles */
+        @media print {
+            nav, .controls, .theme-toggle {
+                display: none;
+            }
+            
+            section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>📊 Comprehensive Agricultural Survey Report</h1>
-            <p class="subtitle">Pehowa Tehsil, Kurukshetra District, Haryana</p>
-            <p class="subtitle">A Detailed Analysis for AgriTech Startup Investment and Contract Farming Opportunities</p>
-            <div class="research-badge">✓ Validated Research: 106 Villages | 255,307 Population | 52,550 Hectares Analyzed</div>
-        </header>
+    <header>
+        <div class="container">
+            <h1>Agricultural Survey Report: Pehowa Tehsil</h1>
+            <p>Comprehensive Analysis for Agritech Investment and Contract Farming Opportunities in Kurukshetra District, Haryana</p>
+        </div>
+    </header>
 
-        <main class="content">
-            <div class="download-section">
-                <h3>📥 Complete Research Report</h3>
-                <p>Download the comprehensive PDF version of this research report for offline reference and detailed documentation.</p>
-                <!-- PDF download link will be updated when uploaded to GitHub Pages -->
-                <a href="#" class="download-btn" target="_blank">Download Full PDF Report</a>
-            </div>
-
-            <nav class="nav-toc">
-                <h3>📋 Table of Contents</h3>
-                <ul>
-                    <li><a href="#executive-summary">Executive Summary</a></li>
-                    <li><a href="#research-credentials">Research Credentials & Methodology</a></li>
-                    <li><a href="#key-findings">Key Research Findings</a></li>
-                    <li><a href="#village-demographics">Village Demographics & Strategic Targets</a></li>
-                    <li><a href="#agricultural-infrastructure">Agricultural Infrastructure & Mechanization</a></li>
-                    <li><a href="#economic-analysis">Economic Analysis & Wealth Distribution</a></li>
-                    <li><a href="#implementation-strategy">Implementation Strategy</a></li>
-                    <li><a href="#detailed-profiles">Detailed Village Profiles</a></li>
-                    <li><a href="#agricultural-machinery">Agricultural Machinery Infrastructure</a></li>
-                    <li><a href="#bibliography">Bibliography & References</a></li>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#research-credentials">Research</a></li>
+                    <li><a href="#executive-summary">Summary</a></li>
+                    <li><a href="#administrative-overview">Villages</a></li>
+                    <li><a href="#agricultural-infrastructure">Agriculture</a></li>
+                    <li><a href="#demographic-analysis">Demographics</a></li>
+                    <li><a href="#strategic-recommendations">Strategy</a></li>
+                    <li><a href="#bibliography">References</a></li>
                 </ul>
-            </nav>
-
-            <section id="executive-summary" class="section">
-                <h2>🎯 Executive Summary</h2>
-                
-                <div class="highlight-box">
-                    <p style="position: relative; z-index: 1;">This comprehensive research study on Pehowa tehsil in Kurukshetra district, Haryana, provides detailed insights for agritech startups seeking to identify optimal villages for proof-of-concept implementation and contract farming initiatives. The study covers 106 villages with a total population of 255,307 people, analyzing demographic patterns, agricultural practices, economic indicators, community structures, and agricultural machinery infrastructure.</p>
+                <div class="controls">
+                    <button class="btn" onclick="changeFontSize(1)">A+</button>
+                    <button class="btn" onclick="changeFontSize(-1)">A-</button>
+                    <select class="btn" id="language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी</option>
+                    </select>
+                    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
                 </div>
+            </div>
+        </div>
+    </nav>
 
+    <main>
+        <div class="container">
+            <section id="research-credentials">
+                <h2>Research Credentials and Methodology</h2>
+                
+                <h3>Principal Investigator</h3>
+                <p><strong>Vipul Anand</strong><br>
+                Owner, Anand Agro Farms (AAF 1993-present)<br>
+                Location: Kherishishgran, Pehowa, Kurukshetra, Haryana<br>
+                Specialization: Rural Employment Research and Application Development</p>
+                
+                <h4>Educational Background</h4>
+                <ul>
+                    <li>Electrical Engineering, Haryana Polytechnic Nilokheri (1988)</li>
+                    <li>Web Development Certification, Byzan, Mumbai (2012-14)</li>
+                    <li>Graphic Design Professional (1998-2025)</li>
+                </ul>
+                
+                <h4>Professional Experience</h4>
+                <ul>
+                    <li>Tech Support Specialist, Dell (USA, Canada) - Bangalore (2005-06)</li>
+                    <li>Tech Support Specialist, Earthlink (USA) - Bangalore (2004-05)</li>
+                    <li>Web Design and Online Market Research (1998-present)</li>
+                    <li>Application Development and Digital Solutions (27+ years experience)</li>
+                </ul>
+                
+                <h4>Contact Information</h4>
+                <p>📧 Email: <a href="mailto:aaf@vipulanand.in">aaf@vipulanand.in</a><br>
+                🌐 Website: <a href="https://aaf.vipulanand.in/research/">https://aaf.vipulanand.in/research/</a></p>
+
+                <h3>Research Methodology</h3>
+                <p><strong>Research Period:</strong> January 2025 - March 2025</p>
+                
+                <p>This comprehensive survey was conducted using advanced digital research methodologies, leveraging 27+ years of experience in web development, online market research, and application development. The research employed systematic data mining techniques, digital verification protocols, and comprehensive online database analysis to ensure accuracy and reliability of findings.</p>
+
+                <h4>Data Collection Methods</h4>
+                <ol>
+                    <li><strong>Digital Database Mining:</strong> Systematic extraction and analysis of government databases using advanced web scraping and data processing techniques</li>
+                    <li><strong>Online Verification Protocols:</strong> Multi-source cross-verification through official government portals and authenticated databases</li>
+                    <li><strong>Remote Stakeholder Analysis:</strong> Digital consultation and verification with agricultural equipment dealers and service providers</li>
+                    <li><strong>Comprehensive Market Intelligence:</strong> Online market analysis using proprietary research methodologies developed over 25+ years</li>
+                    <li><strong>Statistical Modeling and Analysis:</strong> Advanced data processing and economic modeling using digital analytical tools</li>
+                </ol>
+            </section>
+
+            <section id="executive-summary">
+                <h2>Executive Summary</h2>
+                
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number">106</div>
+                        <span class="stat-number">106</span>
                         <div class="stat-label">Villages Surveyed</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">255,307</div>
+                        <span class="stat-number">255,307</span>
                         <div class="stat-label">Total Population</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">52,550</div>
-                        <div class="stat-label">Hectares Cultivable Land</div>
+                        <span class="stat-number">100%</span>
+                        <div class="stat-label">Irrigation Coverage</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Irrigated Area</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">177%</div>
+                        <span class="stat-number">177%</span>
                         <div class="stat-label">Cropping Intensity</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5,045-6,937</div>
-                        <div class="stat-label">Estimated Tractors</div>
-                    </div>
                 </div>
 
-                <h3>Strategic Value Proposition</h3>
-                <p>Pehowa tehsil presents an exceptional opportunity for agritech startups due to its:</p>
-                <ul>
-                    <li><strong>Strong Agricultural Base:</strong> 100% irrigated land with 177% cropping intensity</li>
-                    <li><strong>Progressive Farming Community:</strong> Jat and Sikh farmers with innovation mindset</li>
-                    <li><strong>Excellent Infrastructure:</strong> Road connectivity, processing facilities, and mechanization</li>
-                    <li><strong>Market Access:</strong> Proximity to urban centers and industrial areas</li>
-                    <li><strong>Government Support:</strong> Favorable agricultural policies and schemes</li>
-                </ul>
+                <div class="content-text">
+                    <p>This comprehensive research study on Pehowa tehsil in Kurukshetra district, Haryana, provides detailed insights for agritech startups seeking to identify optimal villages for proof-of-concept implementation and contract farming initiatives. The study covers 106 villages with a total population of 255,307 people, analyzing demographic patterns, agricultural practices, economic indicators, community structures, and agricultural machinery infrastructure.</p>
+
+                    <h3>Key Research Findings</h3>
+                    
+                    <h4>Village Demographics and Infrastructure</h4>
+                    <ul>
+                        <li><strong>Total Villages Surveyed:</strong> 106 villages (81 revenue villages + additional settlements)</li>
+                        <li><strong>Total Population:</strong> 255,307 (79.4% rural, 20.6% urban)</li>
+                        <li><strong>Village Classification:</strong>
+                            <ul>
+                                <li>Large Villages (5,000+): 8 villages</li>
+                                <li>Medium-Large Villages (3,000-5,000): 12 villages</li>
+                                <li>Medium Villages (2,000-3,000): 21 villages</li>
+                                <li>Small Villages (1,000-2,000): 35 villages</li>
+                                <li>Very Small Villages (500-1,000): 20 villages</li>
+                                <li>Tiny Villages (<500): 10 villages</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Agricultural Profile and Productivity</h4>
+                    <ul>
+                        <li><strong>Irrigation Coverage:</strong> 100% irrigated area (exceptional for precision agriculture)</li>
+                        <li><strong>Cropping Intensity:</strong> 177% (multiple crops per year)</li>
+                        <li><strong>Primary Crops:</strong> Wheat, Rice, Sugarcane, Potato</li>
+                        <li><strong>Cultivable Area:</strong> 142,432 hectares (86.67% of total area)</li>
+                        <li><strong>Agricultural Population:</strong> Over 90% engaged in agriculture-related activities</li>
+                    </ul>
+
+                    <h4>Economic Indicators and Wealth Distribution</h4>
+                    <ul>
+                        <li><strong>High Net Worth Individuals:</strong> 600-1,200 families (estimated)</li>
+                        <li><strong>Target Farmer Base:</strong> 3,100-4,400 medium farmers (3-10 acres)</li>
+                        <li><strong>Contract Farming Potential:</strong> 2,000-5,000 farmer contracts</li>
+                        <li><strong>Average Farm Size:</strong> 3-5 acres per farming family</li>
+                    </ul>
+
+                    <h4>Agricultural Mechanization Infrastructure</h4>
+                    <ul>
+                        <li><strong>Tractor Population:</strong> 5,045-6,937 tractors (96-132 per 1,000 hectares)</li>
+                        <li><strong>Harvesting Equipment:</strong> 200-300 combine harvesters, 150-250 mini harvesters</li>
+                        <li><strong>Equipment Dealers:</strong> 8-12 tractor dealers, 15-20 service centers</li>
+                        <li><strong>Custom Hiring Centers:</strong> 15-25 government-supported centers</li>
+                        <li><strong>Total Machinery Investment:</strong> ₹300-500 crores in tehsil</li>
+                    </ul>
+                </div>
+
+                <div class="content-text-hindi" style="display: none;">
+                    <p>यह पेहोवा तहसील, कुरुक्षेत्र जिला, हरियाणा पर व्यापक अनुसंधान अध्ययन एग्रीटेक स्टार्टअप के लिए विस्तृत जानकारी प्रदान करता है जो प्रूफ-ऑफ-कॉन्सेप्ट कार्यान्वयन और अनुबंध खेती की पहल के लिए इष्टतम गांवों की पहचान करना चाहते हैं। इस अध्ययन में 255,307 लोगों की कुल जनसंख्या के साथ 106 गांवों को शामिल किया गया है, जिसमें जनसांख्यिकीय पैटर्न, कृषि प्रथाओं, आर्थिक संकेतकों, सामुदायिक संरचनाओं और कृषि मशीनरी बुनियादी ढांचे का विश्लेषण किया गया है।</p>
+
+                    <h3>मुख्य अनुसंधान निष्कर्ष</h3>
+                    
+                    <h4>ग्राम जनसांख्यिकी और अवसंरचना</h4>
+                    <ul>
+                        <li><strong>कुल सर्वेक्षित गांव:</strong> 106 गांव (81 राजस्व गांव + अतिरिक्त बस्तियां)</li>
+                        <li><strong>कुल जनसंख्या:</strong> 255,307 (79.4% ग्रामीण, 20.6% शहरी)</li>
+                        <li><strong>गांव वर्गीकरण:</strong>
+                            <ul>
+                                <li>बड़े गांव (5,000+): 8 गांव</li>
+                                <li>मध्यम-बड़े गांव (3,000-5,000): 12 गांव</li>
+                                <li>मध्यम गांव (2,000-3,000): 21 गांव</li>
+                                <li>छोटे गांव (1,000-2,000): 35 गांव</li>
+                                <li>बहुत छोटे गांव (500-1,000): 20 गांव</li>
+                                <li>अति छोटे गांव (<500): 10 गांव</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>कृषि प्रोफ़ाइल और उत्पादकता</h4>
+                    <ul>
+                        <li><strong>सिंचाई कवरेज:</strong> 100% सिंचित क्षेत्र (सटीक कृषि के लिए असाधारण)</li>
+                        <li><strong>फसल गहनता:</strong> 177% (वर्ष में कई फसलें)</li>
+                        <li><strong>मुख्य फसलें:</strong> गेहूं, चावल, गन्ना, आलू</li>
+                        <li><strong>खेती योग्य क्षेत्र:</strong> 142,432 हेक्टेयर (कुल क्षेत्र का 86.67%)</li>
+                        <li><strong>कृषि जनसंख्या:</strong> 90% से अधिक कृषि संबंधी गतिविधियों में लगे हुए</li>
+                    </ul>
+
+                    <h4>आर्थिक संकेतक और धन वितरण</h4>
+                    <ul>
+                        <li><strong>उच्च नेट वर्थ व्यक्ति:</strong> 600-1,200 परिवार (अनुमानित)</li>
+                        <li><strong>लक्षित किसान आधार:</strong> 3,100-4,400 मध्यम किसान (3-10 एकड़)</li>
+                        <li><strong>अनुबंध खेती की क्षमता:</strong> 2,000-5,000 किसान अनुबंध</li>
+                        <li><strong>औसत खेत का आकार:</strong> प्रति कृषक परिवार 3-5 एकड़</li>
+                    </ul>
+
+                    <h4>कृषि यंत्रीकरण अवसंरचना</h4>
+                    <ul>
+                        <li><strong>ट्रैक्टर जनसंख्या:</strong> 5,045-6,937 ट्रैक्टर (96-132 प्रति 1,000 हेक्टेयर)</li>
+                        <li><strong>हार्वेस्टिंग उपकरण:</strong> 200-300 कंबाइन हार्वेस्टर, 150-250 मिनी हार्वेस्टर</li>
+                        <li><strong>उपकरण डीलर:</strong> 8-12 ट्रैक्टर डीलर, 15-20 सेवा केंद्र</li>
+                        <li><strong>कस्टम हायरिंग केंद्र:</strong> 15-25 सरकार समर्थित केंद्र</li>
+                        <li><strong>कुल मशीनरी निवेश:</strong> तहसील में ₹300-500 करोड़</li>
+                    </ul>
+                </div>
             </section>
 
-            <section id="research-credentials" class="section">
-                <h2>🔬 Research Credentials & Methodology</h2>
+            <section id="administrative-overview">
+                <h2>Administrative Overview and Village Infrastructure</h2>
                 
-                <div class="credentials-box">
-                    <h3>Principal Investigator</h3>
-                    <p><strong>Vipul Anand</strong><br>
-                    Owner, Anand Agro Farms (AAF 1993-present, kherishishgran, pehowa, kurukshetra)<br>
-                    Rural Employment Research and Application Development<br>
-                    Electrical Engineer, Web Developer[byzan ,mumbai 2012-14], Graphic Design, tech support [Dell(usa,Canada)2005-6 blr, earthlink(USA)2004-5 blr]<br>
-                    20+ years(1998) experience in web design online market research and application development</p>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <p><strong>Contact Information:</strong><br>
-                        📧 Email: <a href="mailto:aaf@vipulanand.in" target="_blank" style="color: #f1c40f;">aaf@vipulanand.in</a><br>
-                        🌐 Website: <a href="https://aaf.vipulanand.in/research/" target="_blank" style="color: #f1c40f;">https://aaf.vipulanand.in/research/</a></p>
-                    </div>
-                </div>
-
-                <div class="methodology-section">
-                    <h3>Research Methodology</h3>
-                    <p><strong>Research Period:</strong> January 2025 - March 2025</p>
-                    
-                    <h4>Primary Research Approach</h4>
-                    <p>This comprehensive survey was conducted using a mixed-methods approach combining quantitative data analysis with qualitative field insights. The research methodology employed multiple data collection techniques to ensure accuracy and reliability of findings.</p>
-                    
-                    <h4>Data Collection Methods</h4>
-                    <ol>
-                        <li><strong>Government Database Analysis:</strong> Systematic review of official census data, agricultural statistics, and administrative records</li>
-                        <li><strong>Digital Field Surveys:</strong> Online verification of village-level data through multiple government portals</li>
-                        <li><strong>Stakeholder Interviews:</strong> Remote consultations with local agricultural officers and equipment dealers</li>
-                        <li><strong>Market Analysis:</strong> Comprehensive review of agricultural machinery dealers and service providers</li>
-                        <li><strong>Economic Modeling:</strong> Statistical analysis of demographic and economic indicators</li>
-                    </ol>
-                </div>
-
-                <h3>Data Sources and Validation</h3>
+                <h3>Pehowa Tehsil Basic Information</h3>
                 <ul>
-                    <li><strong>Primary Sources:</strong> Census of India 2011, District Collector Office Kurukshetra, Department of Agriculture Haryana</li>
-                    <li><strong>Secondary Sources:</strong> Academic research papers, government reports, industry publications</li>
-                    <li><strong>Cross-Validation:</strong> Multiple source verification for all statistical data</li>
-                    <li><strong>Quality Assurance:</strong> Systematic fact-checking and data triangulation</li>
+                    <li><strong>Administrative Status:</strong> One of 4 main tehsils in Kurukshetra district</li>
+                    <li><strong>Sub-division:</strong> Pehowa sub-division has 38 Patwar Circles and 3 Kanungo Circles</li>
+                    <li><strong>Total Area:</strong> 60,469 hectares (Pehowa sub-division)</li>
+                    <li><strong>Cultivable Area:</strong> 52,550 hectares</li>
                 </ul>
 
-                <h3>Ethical Considerations</h3>
-                <ul>
-                    <li>All data sources are publicly available government records</li>
-                    <li>No personal information of individuals collected or disclosed</li>
-                    <li>Research conducted in compliance with data protection guidelines</li>
-                    <li>Findings presented for academic and business planning purposes only</li>
-                </ul>
-            </section>
-
-            <section id="key-findings" class="section">
-                <h2>🔍 Key Research Findings</h2>
-
-                <h3>Village Demographics and Infrastructure</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">106</div>
-                        <div class="stat-label">Total Villages (81 revenue + 25 settlements)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">79.4%</div>
-                        <div class="stat-label">Rural Population</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">20.6%</div>
-                        <div class="stat-label">Urban Population</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">72.01%</div>
-                        <div class="stat-label">Literacy Rate</div>
-                    </div>
-                </div>
-
-                <h4>Village Classification by Population</h4>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Population Range</th>
-                                <th>Number of Villages</th>
-                                <th>Strategic Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Large Villages</td>
-                                <td>5,000+ population</td>
-                                <td>8 villages</td>
-                                <td>Primary Targets</td>
-                            </tr>
-                            <tr>
-                                <td>Medium-Large Villages</td>
-                                <td>3,000-5,000 population</td>
-                                <td>12 villages</td>
-                                <td>Secondary Targets</td>
-                            </tr>
-                            <tr>
-                                <td>Medium Villages</td>
-                                <td>2,000-3,000 population</td>
-                                <td>21 villages</td>
-                                <td>Tertiary Targets</td>
-                            </tr>
-                            <tr>
-                                <td>Small Villages</td>
-                                <td>1,000-2,000 population</td>
-                                <td>35 villages</td>
-                                <td>Specialized Focus</td>
-                            </tr>
-                            <tr>
-                                <td>Very Small Villages</td>
-                                <td>500-1,000 population</td>
-                                <td>20 villages</td>
-                                <td>Niche Opportunities</td>
-                            </tr>
-                            <tr>
-                                <td>Tiny Villages</td>
-                                <td>&lt;500 population</td>
-                                <td>10 villages</td>
-                                <td>Future Expansion</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Agricultural Profile and Productivity</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Irrigated Area (Exceptional for Precision Agriculture)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">177%</div>
-                        <div class="stat-label">Cropping Intensity (Multiple crops per year)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">86.67%</div>
-                        <div class="stat-label">Cultivable Area (142,432 hectares)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">90%+</div>
-                        <div class="stat-label">Agricultural Population</div>
-                    </div>
-                </div>
-
-                <h4>Primary Crops</h4>
-                <ul>
-                    <li><strong>Wheat:</strong> Primary Rabi crop with established markets</li>
-                    <li><strong>Rice (Paddy):</strong> Primary Kharif crop with processing infrastructure</li>
-                    <li><strong>Sugarcane:</strong> Major commercial crop (~12,000 hectares district-wide)</li>
-                    <li><strong>Potato:</strong> High-value vegetable crop (~5,645 tons production)</li>
-                </ul>
-            </section>
-
-            <section id="village-demographics" class="section">
-                <h2>🏘️ Village Demographics & Strategic Targets</h2>
-
-                <h3>Top Priority Villages for AgriTech Investment</h3>
-                
-                <div class="village-grid">
-                    <div class="village-card tier-1">
-                        <div class="village-header">
-                            <div class="village-name">🏆 Gumthala Garhu</div>
-                            <div class="tier-badge">Tier 1 - Flagship</div>
-                        </div>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr;">
-                            <div class="stat-card">
-                                <div class="stat-number">8,237</div>
-                                <div class="stat-label">Population</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">40-50</div>
-                                <div class="stat-label">HNI Families</div>
-                            </div>
-                        </div>
-                        <p><strong>Strategic Value:</strong> Largest village with excellent infrastructure, maximum demonstration effect for scaling, highest equipment utilization potential.</p>
-                        <p><strong>Contract Potential:</strong> 300-400 farmers</p>
-                        <p><strong>Dominant Community:</strong> Likely Jat/Sikh progressive farming community</p>
-                    </div>
-
-                    <div class="village-card tier-1">
-                        <div class="village-header">
-                            <div class="village-name">💡 Jhansa</div>
-                            <div class="tier-badge">Tier 1 - Innovation Hub</div>
-                        </div>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr;">
-                            <div class="stat-card">
-                                <div class="stat-number">7,089</div>
-                                <div class="stat-label">Population</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">35-40</div>
-                                <div class="stat-label">HNI Families</div>
-                            </div>
-                        </div>
-                        <p><strong>Strategic Value:</strong> Early technology adopter community, strong farmer networks, Bhavya Tractors dealer presence.</p>
-                        <p><strong>Contract Potential:</strong> 250-350 farmers</p>
-                        <p><strong>Focus:</strong> Agricultural innovation hub and technology validation</p>
-                    </div>
-
-                    <div class="village-card tier-1">
-                        <div class="village-header">
-                            <div class="village-name">🚛 Thana</div>
-                            <div class="tier-badge">Tier 1 - Supply Chain</div>
-                        </div>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr;">
-                            <div class="stat-card">
-                                <div class="stat-number">6,625</div>
-                                <div class="stat-label">Population</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">30-35</div>
-                                <div class="stat-label">HNI Families</div>
-                            </div>
-                        </div>
-                        <p><strong>Strategic Value:</strong> Traditional farming community with stability, excellent market access via main roads.</p>
-                        <p><strong>Contract Potential:</strong> 250-300 farmers</p>
-                        <p><strong>Focus:</strong> Supply chain optimization and post-harvest processing</p>
-                    </div>
-                </div>
-
-                <h3>Top 20 Villages by Population</h3>
-                <div class="table-responsive">
+                <h3>Major Villages by Population (Top 20)</h3>
+                <div class="table-container">
                     <table>
                         <thead>
                             <tr>
@@ -754,1300 +559,676 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Gumthala Garhu</td>
-                                <td>8,237</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jhansa</td>
-                                <td>7,089</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Thana</td>
-                                <td>6,625</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Thol</td>
-                                <td>6,466</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Sarsa</td>
-                                <td>6,394</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Siana Saidan</td>
-                                <td>5,682</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Diwana</td>
-                                <td>5,520</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Bhorak</td>
-                                <td>5,129</td>
-                                <td>Large Village</td>
-                                <td>Primary Target</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>Murtzapur</td>
-                                <td>4,705</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>Thaska Miranji</td>
-                                <td>4,333</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>Bakhli</td>
-                                <td>3,934</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>Shanti Nagar Alias Kurri</td>
-                                <td>3,762</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>Sarusti Khera</td>
-                                <td>3,731</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td>Ishaq</td>
-                                <td>3,689</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td>Urnai</td>
-                                <td>3,686</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>16</td>
-                                <td>Kalsa</td>
-                                <td>3,501</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>Usmanpur</td>
-                                <td>3,438</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>18</td>
-                                <td>Bodhni</td>
-                                <td>3,392</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>19</td>
-                                <td>Sandholi</td>
-                                <td>3,166</td>
-                                <td>Medium-Large</td>
-                                <td>Secondary Target</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>Kamoda</td>
-                                <td>2,798</td>
-                                <td>Medium Village</td>
-                                <td>Tertiary Target</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Community Demographics and Social Structure</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">75.6%</div>
-                        <div class="stat-label">Hindu Population</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">22.7%</div>
-                        <div class="stat-label">Sikh Population</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">22.5%</div>
-                        <div class="stat-label">Scheduled Caste</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">77.5%</div>
-                        <div class="stat-label">General Categories</div>
-                    </div>
-                </div>
-
-                <h4>Dominant Jat Gotras (Clans) in Pehowa</h4>
-                <p>Based on historical records and community presence:</p>
-                <ul>
-                    <li>Dandyan</li>
-                    <li>Dhanda</li>
-                    <li>Laller</li>
-                    <li>Malik</li>
-                    <li>Narwal</li>
-                    <li>Panjeta</li>
-                    <li>Saharan</li>
-                    <li>Sheokand</li>
-                </ul>
-            </section>
-
-            <section id="agricultural-infrastructure" class="section">
-                <h2>🚜 Agricultural Infrastructure & Mechanization</h2>
-
-                <h3>Land Use and Irrigation Infrastructure</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">164,335</div>
-                        <div class="stat-label">Total Geographical Area (hectares)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">142,432</div>
-                        <div class="stat-label">Total Cultivable Area (hectares)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">266,000</div>
-                        <div class="stat-label">Gross Cropped Area (hectares)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Irrigation Coverage</div>
-                    </div>
-                </div>
-
-                <h4>Irrigation Infrastructure</h4>
-                <p><strong>Major Water Sources:</strong></p>
-                <ul>
-                    <li>Markanda River (perennial)</li>
-                    <li>Saraswati River (seasonal)</li>
-                    <li>SYL Canal</li>
-                    <li>Narwana Branch Canal</li>
-                    <li>Bore wells</li>
-                    <li>Bibipur Lake</li>
-                </ul>
-
-                <h3>Primary Crop Systems</h3>
-                
-                <h4>Kharif Season (Summer/Monsoon)</h4>
-                <ul>
-                    <li><strong>Rice:</strong> Primary crop with established processing units</li>
-                    <li><strong>Sugarcane:</strong> Commercial crop with ~12,000 hectares coverage</li>
-                    <li><strong>Maize:</strong> Secondary crop</li>
-                    <li><strong>Cotton:</strong> In select areas</li>
-                    <li><strong>Vegetables:</strong> Various types with growing commercial importance</li>
-                </ul>
-
-                <h4>Rabi Season (Winter)</h4>
-                <ul>
-                    <li><strong>Wheat:</strong> Primary crop with guaranteed markets</li>
-                    <li><strong>Potato:</strong> Major vegetable crop (~5,645 tons production)</li>
-                    <li><strong>Mustard:</strong> Oilseed crop</li>
-                    <li><strong>Other vegetables:</strong> Various types</li>
-                </ul>
-
-                <h3>Commercial Agriculture Infrastructure</h3>
-                <ul>
-                    <li><strong>Sugarcane:</strong> Major commercial crop with processing facilities</li>
-                    <li><strong>Potato:</strong> High commercial value with significant production</li>
-                    <li><strong>Rice Mills:</strong> Multiple rice processing units (e.g., in Urnaicha village)</li>
-                    <li><strong>Vegetable Cultivation:</strong> Growing commercial importance</li>
-                    <li><strong>Grain Milling:</strong> Facilities for wheat and rice processing</li>
-                    <li><strong>Market Access:</strong> Good connectivity via NH-1</li>
-                    <li><strong>Storage Facilities:</strong> Available for major crops</li>
-                </ul>
-            </section>
-
-            <section id="economic-analysis" class="section">
-                <h2>💰 Economic Analysis & Wealth Distribution</h2>
-
-                <h3>High Net Worth Individuals (HNI) Estimation</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">600-1,200</div>
-                        <div class="stat-label">Total HNI Families (Conservative-Optimistic)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">₹10+ Lakhs</div>
-                        <div class="stat-label">Annual Income (HNI Definition)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">10+ Acres</div>
-                        <div class="stat-label">Land Ownership (HNI Criteria)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3,100-4,400</div>
-                        <div class="stat-label">Medium Farmers (3-10 acres)</div>
-                    </div>
-                </div>
-
-                <h3>HNI Distribution by Village Category</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Village Category</th>
-                                <th>Population Range</th>
-                                <th>HNI Families per Village</th>
-                                <th>Total HNI Families</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Large Villages</td>
-                                <td>5,000+ population</td>
-                                <td>25-50 families</td>
-                                <td>200-400 families</td>
-                            </tr>
-                            <tr>
-                                <td>Medium-Large Villages</td>
-                                <td>3,000-5,000 population</td>
-                                <td>15-25 families</td>
-                                <td>180-300 families</td>
-                            </tr>
-                            <tr>
-                                <td>Medium Villages</td>
-                                <td>2,000-3,000 population</td>
-                                <td>8-15 families</td>
-                                <td>168-315 families</td>
-                            </tr>
-                            <tr>
-                                <td>Small Villages</td>
-                                <td>&lt;2,000 population</td>
-                                <td>2-8 families</td>
-                                <td>130-520 families</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Agricultural Land Ownership Patterns</h3>
-                
-                <h4>Large Landowners (Likely HNI Category)</h4>
-                <ul>
-                    <li>Own 10+ acres of irrigated land</li>
-                    <li>Multiple crop cycles per year</li>
-                    <li>Modern farming equipment</li>
-                    <li>Storage and processing facilities</li>
-                </ul>
-                <p><strong>Distribution:</strong> 3-10% of farming families across village categories</p>
-
-                <h4>Medium Farmers (Primary Target)</h4>
-                <ul>
-                    <li>Own 3-10 acres of land</li>
-                    <li>Good irrigation access</li>
-                    <li>Moderate mechanization</li>
-                    <li>Motivated to adopt new technologies</li>
-                </ul>
-                <p><strong>Distribution:</strong> 25-40% of farming families (3,100-4,400 total families)</p>
-
-                <h4>Small and Marginal Farmers</h4>
-                <ul>
-                    <li>Own less than 3 acres</li>
-                    <li>Limited resources</li>
-                    <li>Often work as agricultural laborers</li>
-                </ul>
-                <p><strong>Distribution:</strong> 50-70% of farming families</p>
-
-                <h3>Economic Factors Influencing Prosperity</h3>
-                
-                <h4>Agricultural Prosperity Indicators</h4>
-                <ul>
-                    <li><strong>100% Irrigated Land:</strong> Ensures consistent crop yields</li>
-                    <li><strong>High Cropping Intensity (177%):</strong> Multiple crops per year</li>
-                    <li><strong>Proximity to Markets:</strong> Good road connectivity via NH-1</li>
-                    <li><strong>Processing Infrastructure:</strong> Rice mills, grain storage</li>
-                    <li><strong>Commercial Crops:</strong> Sugarcane, potato cultivation</li>
-                </ul>
-
-                <h4>Wealth Concentration Factors</h4>
-                <ul>
-                    <li><strong>Jat Community Dominance:</strong> Traditional landowners</li>
-                    <li><strong>Sikh Agricultural Success:</strong> Progressive farming practices</li>
-                    <li><strong>Urban Proximity:</strong> Access to Kurukshetra markets</li>
-                    <li><strong>Industrial Development:</strong> Growing industrial belt</li>
-                </ul>
-
-                <h3>Contract Farming Potential Assessment</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">2,000-5,000</div>
-                        <div class="stat-label">Total Contract Farming Potential</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3,100-4,400</div>
-                        <div class="stat-label">Primary Target (Medium Farmers)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">600-1,200</div>
-                        <div class="stat-label">Secondary Target (Large Farmers)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3-5 acres</div>
-                        <div class="stat-label">Average Farm Size</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="agricultural-machinery" class="section">
-                <h2>🚜 Agricultural Machinery Infrastructure</h2>
-
-                <h3>Mechanization Statistics</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">96-132</div>
-                        <div class="stat-label">Tractors per 1,000 hectares (Highest in India)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5,045-6,937</div>
-                        <div class="stat-label">Estimated Tractors in Pehowa</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">200-300</div>
-                        <div class="stat-label">Combine Harvesters</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">₹300-500 Cr</div>
-                        <div class="stat-label">Total Machinery Investment</div>
-                    </div>
-                </div>
-
-                <h3>Equipment Distribution by Village Size</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Village Category</th>
-                                <th>Population</th>
-                                <th>Tractors per Village</th>
-                                <th>Combine Harvesters</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Large Villages</td>
-                                <td>5,000+ population</td>
-                                <td>150-200 tractors</td>
-                                <td>8-12 combines</td>
-                            </tr>
-                            <tr>
-                                <td>Medium Villages</td>
-                                <td>2,000-5,000 population</td>
-                                <td>50-100 tractors</td>
-                                <td>3-6 combines</td>
-                            </tr>
-                            <tr>
-                                <td>Small Villages</td>
-                                <td>&lt;2,000 population</td>
-                                <td>20-50 tractors</td>
-                                <td>1-3 combines</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Major Equipment Dealers in Pehowa Tehsil</h3>
-                
-                <h4>Primary Tractor Dealers</h4>
-                <ol>
-                    <li>
-                        <strong>Kuldeep Tractor (Mahindra Authorized Dealer)</strong>
-                        <ul>
-                            <li>Location: Kaithal Road, Usmanpur, Near PNB Bank, Pehowa-136128</li>
-                            <li>Contact: 08071867087</li>
-                            <li>Services: Sales, Service, Spare Parts, Finance</li>
-                            <li>Popular Models: OJA 2127, JIVO 225 DI 4WD, 475 DI XP PLUS, 415 DI SP PLUS, 575 YUVO TECH+ 4WD</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Bhavya Tractors</strong>
-                        <ul>
-                            <li>Location: VPO Jhansa, Pehowa, Kurukshetra</li>
-                            <li>Services: Multi-brand tractor sales and service</li>
-                            <li>Coverage: Jhansa and surrounding villages</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Singh Farmtrac</strong>
-                        <ul>
-                            <li>Brand Specialization: Farmtrac tractors</li>
-                            <li>Services: Sales, service, parts supply</li>
-                            <li>Market Share: Strong presence in medium HP segment</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Dashmesh Tractors</strong>
-                        <ul>
-                            <li>Type: Multi-brand dealer</li>
-                            <li>Services: Comprehensive tractor solutions and agricultural implements</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <h3>Brand Analysis and Market Share</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Brand</th>
-                                <th>Market Share</th>
-                                <th>Price Range</th>
-                                <th>Key Strengths</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Mahindra</td>
-                                <td>30-35%</td>
-                                <td>₹4-12 lakhs</td>
-                                <td>Strong dealer network, reliable service</td>
-                            </tr>
-                            <tr>
-                                <td>Farmtrac</td>
-                                <td>20-25%</td>
-                                <td>₹5-10 lakhs</td>
-                                <td>Value for money, robust build</td>
-                            </tr>
-                            <tr>
-                                <td>John Deere</td>
-                                <td>10-15%</td>
-                                <td>₹8-18 lakhs</td>
-                                <td>Advanced technology, fuel efficiency</td>
-                            </tr>
-                            <tr>
-                                <td>Swaraj</td>
-                                <td>10-15%</td>
-                                <td>₹5-12 lakhs</td>
-                                <td>Fuel efficiency, durability</td>
-                            </tr>
-                            <tr>
-                                <td>New Holland</td>
-                                <td>8-12%</td>
-                                <td>₹6-15 lakhs</td>
-                                <td>Technology, comfort features</td>
-                            </tr>
-                            <tr>
-                                <td>Others</td>
-                                <td>10-15%</td>
-                                <td>₹4-12 lakhs</td>
-                                <td>Sonalika, Escorts, Force Motors</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Custom Hiring Centers and Services</h3>
-                
-                <h4>Government-Supported Infrastructure</h4>
-                <ul>
-                    <li><strong>Operational CHCs:</strong> 15-25 centers in tehsil</li>
-                    <li><strong>Government Schemes:</strong> Promotion of Agricultural Mechanization, In-Situ Crop Residue Management, Farm Machinery Banks</li>
-                    <li><strong>NABARD Support:</strong> Financial assistance for CHC establishment</li>
-                    <li><strong>Subsidy Structure:</strong> 40-50% subsidy for SC/ST, 25% for general category</li>
-                </ul>
-
-                <h4>Services and Pricing</h4>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Service Category</th>
-                                <th>Specific Services</th>
-                                <th>Rate per Acre</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Land Preparation</td>
-                                <td>Plowing, Harrowing, Land leveling</td>
-                                <td>₹800-1,200, ₹400-600, ₹600-800</td>
-                            </tr>
-                            <tr>
-                                <td>Sowing and Planting</td>
-                                <td>Seed drilling, Broadcasting, Transplanting</td>
-                                <td>₹500-700, ₹300-400, ₹1,000-1,500</td>
-                            </tr>
-                            <tr>
-                                <td>Harvesting</td>
-                                <td>Combine harvesting, Manual harvesting</td>
-                                <td>₹1,800-2,500, ₹2,500-3,500</td>
-                            </tr>
-                            <tr>
-                                <td>Post-Harvest</td>
-                                <td>Threshing, Winnowing, Transportation</td>
-                                <td>₹400-600/quintal, ₹200-300/quintal, ₹50-100/quintal</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Technology Integration Opportunities</h3>
-                
-                <h4>Current Technology Levels</h4>
-                <ul>
-                    <li><strong>Basic Mechanization:</strong> 95% adoption</li>
-                    <li><strong>Advanced Features:</strong> 30-40% adoption (GPS, auto-steer)</li>
-                    <li><strong>Digital Integration:</strong> 10-15% adoption</li>
-                    <li><strong>Precision Agriculture:</strong> 5-10% adoption</li>
-                </ul>
-
-                <h4>AgriTech Integration Opportunities</h4>
-                <ol>
-                    <li>
-                        <strong>Tractor Telematics:</strong>
-                        <ul>
-                            <li>GPS tracking and fleet management</li>
-                            <li>Fuel consumption monitoring</li>
-                            <li>Performance analytics</li>
-                            <li>Maintenance scheduling</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Harvester Optimization:</strong>
-                        <ul>
-                            <li>Yield mapping systems</li>
-                            <li>Loss monitoring sensors</li>
-                            <li>Quality assessment tools</li>
-                            <li>Real-time data collection</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Custom Hiring Platforms:</strong>
-                        <ul>
-                            <li>Digital marketplace for equipment rental</li>
-                            <li>Demand-supply matching</li>
-                            <li>Payment integration</li>
-                            <li>Service quality ratings</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Maintenance Solutions:</strong>
-                        <ul>
-                            <li>Predictive maintenance systems</li>
-                            <li>Remote diagnostics</li>
-                            <li>Parts inventory management</li>
-                            <li>Service scheduling apps</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <h3>Economic Impact of Mechanization</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">₹300-500 Cr</div>
-                        <div class="stat-label">Total Machinery Investment</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">₹50-75 Cr</div>
-                        <div class="stat-label">Annual Machinery Turnover</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1,000-1,500</div>
-                        <div class="stat-label">Direct + Indirect Employment</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">60-70%</div>
-                        <div class="stat-label">Labor Reduction</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="implementation-strategy" class="section">
-                <h2>🎯 Implementation Strategy</h2>
-
-                <div class="implementation-timeline">
-                    <h3>Phased Implementation Timeline</h3>
-                    <p>Systematic rollout strategy leveraging validated agricultural infrastructure across selected villages</p>
-                    
-                    <div class="phase-grid">
-                        <div class="phase-card">
-                            <h4>Phase 1: Foundation (Months 1-6)</h4>
-                            <ul>
-                                <li>Village Selection: Choose 3-5 Tier 1 villages</li>
-                                <li>Community Engagement: Meet with village leaders</li>
-                                <li>Farmer Identification: Target medium farmers (3-10 acres)</li>
-                                <li>Pilot Contracts: Start with 50-100 farmers</li>
-                                <li>Technology Deployment: Basic precision agriculture tools</li>
-                                <li><strong>Target:</strong> 100-150 active farmers</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="phase-card">
-                            <h4>Phase 2: Expansion (Months 7-18)</h4>
-                            <ul>
-                                <li>Scale Operations: Expand to 10-15 villages</li>
-                                <li>Crop Diversification: Add sugarcane and vegetables</li>
-                                <li>Farmer Training: Establish extension services</li>
-                                <li>Supply Chain: Develop collection and processing</li>
-                                <li>Technology Upgrade: Advanced monitoring systems</li>
-                                <li><strong>Target:</strong> 800-1,200 active farmers</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="phase-card">
-                            <h4>Phase 3: Consolidation (Months 19-36)</h4>
-                            <ul>
-                                <li>Market Leadership: Establish regional presence</li>
-                                <li>Value Addition: Processing and branding</li>
-                                <li>Financial Services: Credit and insurance products</li>
-                                <li>Sustainability: Environmental and social impact</li>
-                                <li>Replication: Model for other regions</li>
-                                <li><strong>Target:</strong> 2,000+ active farmers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <h3>Village Selection Criteria</h3>
-                <ol>
-                    <li><strong>Population 2,000-5,000:</strong> Optimal size for operations</li>
-                    <li><strong>Mixed Caste Composition:</strong> Diverse farmer base</li>
-                    <li><strong>Good Road Connectivity:</strong> Easy access for operations</li>
-                    <li><strong>Existing Agricultural Infrastructure:</strong> Processing facilities</li>
-                </ol>
-
-                <h3>Community Engagement Strategy</h3>
-                <ol>
-                    <li><strong>Engage Jat Community Leaders:</strong> Traditional influence and landowners</li>
-                    <li><strong>Partner with Progressive Farmers:</strong> Technology adoption leaders</li>
-                    <li><strong>Leverage Religious Networks:</strong> Sikh/Hindu community connections</li>
-                    <li><strong>Work with Cooperative Societies:</strong> Established farmer groups</li>
-                </ol>
-
-                <h3>Crop-Specific Contract Farming Opportunities</h3>
-                
-                <h4>Wheat-Rice System (Primary Focus)</h4>
-                <ul>
-                    <li><strong>Target Villages:</strong> All Tier 1 and Tier 2 villages</li>
-                    <li><strong>Contract Potential:</strong> 2,000-3,000 farmers</li>
-                    <li><strong>Technology Integration:</strong> Precision seeding and harvesting, soil health monitoring, water management systems, post-harvest processing</li>
-                </ul>
-
-                <h4>Sugarcane (Commercial Crop)</h4>
-                <ul>
-                    <li><strong>Target Villages:</strong> Large villages with processing access</li>
-                    <li><strong>Contract Potential:</strong> 500-800 farmers</li>
-                    <li><strong>Value Addition:</strong> Quality improvement programs, efficient harvesting techniques, direct mill linkages, premium pricing contracts</li>
-                </ul>
-
-                <h4>Potato and Vegetables (High-Value Crops)</h4>
-                <ul>
-                    <li><strong>Target Villages:</strong> Medium villages near urban markets</li>
-                    <li><strong>Contract Potential:</strong> 800-1,200 farmers</li>
-                    <li><strong>Market Advantages:</strong> Higher profit margins, shorter crop cycles, growing market demand, export potential</li>
-                </ul>
-
-                <h3>Financial Projections</h3>
-                
-                <h4>Investment Requirements</h4>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">₹5-10 Lakhs</div>
-                        <div class="stat-label">Village Setup per Village</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">₹20-30 Lakhs</div>
-                        <div class="stat-label">Technology Infrastructure</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">₹50-100 Lakhs</div>
-                        <div class="stat-label">Working Capital</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">₹1-2 Crores</div>
-                        <div class="stat-label">Total Initial Investment</div>
-                    </div>
-                </div>
-
-                <h4>Revenue Potential</h4>
-                <ul>
-                    <li><strong>Contract Farming:</strong> ₹500-1,000 per acre margin</li>
-                    <li><strong>Technology Services:</strong> ₹200-500 per farmer</li>
-                    <li><strong>Input Supply:</strong> 10-15% margin</li>
-                    <li><strong>Processing:</strong> 20-30% value addition</li>
-                </ul>
-
-                <h4>Break-even Analysis</h4>
-                <ul>
-                    <li><strong>Farmer Base:</strong> 1,000-1,500 contracted farmers</li>
-                    <li><strong>Average Farm Size:</strong> 3-5 acres</li>
-                    <li><strong>Timeline:</strong> 18-24 months</li>
-                    <li><strong>ROI:</strong> 25-35% annually</li>
-                </ul>
-
-                <h3>Risk Assessment and Mitigation</h3>
-                
-                <h4>Primary Risks</h4>
-                <ol>
-                    <li><strong>Weather Dependency:</strong> Mitigate with crop insurance</li>
-                    <li><strong>Market Fluctuations:</strong> Diversify crop portfolio</li>
-                    <li><strong>Technology Adoption:</strong> Gradual implementation with farmer training</li>
-                    <li><strong>Community Resistance:</strong> Strong engagement strategy and local partnerships</li>
-                    <li><strong>Competition:</strong> Focus on value addition and superior service</li>
-                </ol>
-
-                <h4>Success Factors</h4>
-                <ol>
-                    <li><strong>Community Trust:</strong> Long-term relationship building</li>
-                    <li><strong>Technology Relevance:</strong> Practical, profitable solutions</li>
-                    <li><strong>Market Access:</strong> Guaranteed procurement and fair pricing</li>
-                    <li><strong>Financial Viability:</strong> Attractive farmer returns</li>
-                    <li><strong>Scalability:</strong> Replicable business model</li>
-                </ol>
-            </section>
-
-            <section id="detailed-profiles" class="section">
-                <h2>📍 Detailed Village Profiles</h2>
-
-                <h3>Flagship Village Profile: Gumthala Garhu</h3>
-                <div class="village-card tier-1" style="margin: 2rem 0;">
-                    <div class="village-header">
-                        <div class="village-name">🏆 Gumthala Garhu - Flagship Implementation</div>
-                        <div class="tier-badge">Priority 1</div>
-                    </div>
-                    
-                    <h4>Basic Demographics</h4>
-                    <ul>
-                        <li><strong>Population:</strong> 8,237 (largest in tehsil)</li>
-                        <li><strong>Category:</strong> Large Agricultural Hub</li>
-                        <li><strong>Estimated Families:</strong> ~1,400-1,500</li>
-                    </ul>
-
-                    <h4>Agricultural Profile</h4>
-                    <ul>
-                        <li><strong>Primary Crops:</strong> Wheat, Rice, Sugarcane</li>
-                        <li><strong>Land Ownership:</strong> Mixed (large, medium, small farmers)</li>
-                        <li><strong>Irrigation:</strong> Excellent (canal + bore well access)</li>
-                        <li><strong>Mechanization:</strong> High adoption potential</li>
-                    </ul>
-
-                    <h4>Economic Indicators</h4>
-                    <ul>
-                        <li><strong>HNI Families:</strong> 40-50 (3-4% of total families)</li>
-                        <li><strong>Medium Farmers:</strong> 350-450 families</li>
-                        <li><strong>Small Farmers:</strong> 800-900 families</li>
-                        <li><strong>Agricultural Laborers:</strong> 200-300 families</li>
-                    </ul>
-
-                    <h4>Community Structure</h4>
-                    <ul>
-                        <li><strong>Dominant Caste:</strong> Likely Jat (40-50%)</li>
-                        <li><strong>Scheduled Caste:</strong> ~22% (300-350 families)</li>
-                        <li><strong>Religious Mix:</strong> Hindu majority with Sikh minority</li>
-                        <li><strong>Leadership:</strong> Traditional panchayat system</li>
-                    </ul>
-
-                    <h4>Infrastructure Assessment</h4>
-                    <ul>
-                        <li><strong>Road Connectivity:</strong> Good (proximity to main roads)</li>
-                        <li><strong>Storage Facilities:</strong> Likely present</li>
-                        <li><strong>Processing Units:</strong> Potential rice mill access</li>
-                        <li><strong>Market Access:</strong> Excellent via NH-1</li>
-                    </ul>
-
-                    <h4>Contract Farming Potential</h4>
-                    <ul>
-                        <li><strong>Primary Target:</strong> 300-400 medium farmers</li>
-                        <li><strong>Secondary Target:</strong> 40-50 large farmers</li>
-                        <li><strong>Crop Focus:</strong> Wheat-Rice rotation, Sugarcane</li>
-                        <li><strong>Technology Adoption:</strong> High potential due to progressive community</li>
-                    </ul>
-                </div>
-
-                <h3>Innovation Hub Profile: Jhansa</h3>
-                <div class="village-card tier-1" style="margin: 2rem 0;">
-                    <div class="village-header">
-                        <div class="village-name">💡 Jhansa - Agricultural Innovation Center</div>
-                        <div class="tier-badge">Priority 1</div>
-                    </div>
-                    
-                    <h4>Basic Demographics</h4>
-                    <ul>
-                        <li><strong>Population:</strong> 7,089</li>
-                        <li><strong>Category:</strong> Agricultural Innovation Center</li>
-                        <li><strong>Estimated Families:</strong> ~1,200-1,300</li>
-                    </ul>
-
-                    <h4>Strategic Advantages</h4>
-                    <ul>
-                        <li><strong>Progressive Farming:</strong> Likely early technology adopters</li>
-                        <li><strong>Community Cohesion:</strong> Strong farmer networks</li>
-                        <li><strong>Market Integration:</strong> Good commercial connections</li>
-                        <li><strong>Leadership Influence:</strong> Regional agricultural influence</li>
-                        <li><strong>Equipment Access:</strong> Bhavya Tractors dealer presence</li>
-                    </ul>
-
-                    <h4>Contract Farming Recommendations</h4>
-                    <ul>
-                        <li><strong>Pilot Programs:</strong> Ideal for new technology testing</li>
-                        <li><strong>Farmer Training:</strong> Hub for extension services</li>
-                        <li><strong>Demonstration Plots:</strong> Showcase modern practices</li>
-                        <li><strong>Supply Chain:</strong> Central collection point</li>
-                        <li><strong>Technology Hub:</strong> IoT and precision agriculture focus</li>
-                    </ul>
-                </div>
-
-                <h3>Complete Village List (All 106 Villages)</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Sr.No</th>
-                                <th>Village Code</th>
-                                <th>Village Name</th>
-                                <th>Population</th>
-                                <th>Category</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td>00373</td><td>Adhoya</td><td>2,470</td><td>Medium Village</td></tr>
-                            <tr><td>2</td><td>00388</td><td>ARNECHA</td><td>2,195</td><td>Medium Village</td></tr>
-                            <tr><td>3</td><td>05774</td><td>Asmanpur</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>4</td><td>05795</td><td>Azamatpur</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>5</td><td>05798</td><td>Bachaki</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>6</td><td>00377</td><td>Bakhli</td><td>3,934</td><td>Medium-Large Village</td></tr>
-                            <tr><td>7</td><td>05775</td><td>Balochpura</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>8</td><td>00387</td><td>Batheri</td><td>2,464</td><td>Medium Village</td></tr>
-                            <tr><td>9</td><td>05771</td><td>Bhansi Majra</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>10</td><td>05748</td><td>BHERIAN</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>11</td><td>00382</td><td>Bhor saidan</td><td>2,289</td><td>Medium Village</td></tr>
-                            <tr><td>12</td><td>00398</td><td>Bhorak</td><td>5,129</td><td>Large Village</td></tr>
-                            <tr><td>13</td><td>00385</td><td>Bibipur Kalan</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>14</td><td>05780</td><td>Bodha</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>15</td><td>00395</td><td>Bodni</td><td>3,392</td><td>Medium-Large Village</td></tr>
-                            <tr><td>16</td><td>00394</td><td>Chanalheri</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>17</td><td>05779</td><td>Chhajupur</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>18</td><td>00383</td><td>Chhalon</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>19</td><td>05776</td><td>Dhani rampura</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>20</td><td>05749</td><td>Dhulgarh</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>21</td><td>00374</td><td>DIWANA</td><td>5,520</td><td>Large Village</td></tr>
-                            <tr><td>22</td><td>00405</td><td>Duniya majra</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>23</td><td>05750</td><td>Galedwa</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>24</td><td>05787</td><td>Gangheri</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>25</td><td>05766</td><td>GARHI KAHARAN</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>26</td><td>05757</td><td>Garhi langri</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>27</td><td>05762</td><td>Garhi roran</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>28</td><td>00370</td><td>GULDEHRA</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>29</td><td>00391</td><td>Gumthala garhu</td><td>8,237</td><td>Large Village</td></tr>
-                            <tr><td>30</td><td>05752</td><td>HELWA</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>31</td><td>00375</td><td>Ishak</td><td>3,689</td><td>Medium-Large Village</td></tr>
-                            <tr><td>32</td><td>05758</td><td>Jhinwarheri</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>33</td><td>-</td><td>Jhansa</td><td>7,089</td><td>Large Village</td></tr>
-                            <tr><td>34</td><td>05783</td><td>Julmat</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>35</td><td>00397</td><td>Jurasi kalan</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>36</td><td>05777</td><td>JURASI KHURD</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>37</td><td>05755</td><td>Kakrala gujran</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>38</td><td>00396</td><td>KALSA</td><td>3,501</td><td>Medium-Large Village</td></tr>
-                            <tr><td>39</td><td>00381</td><td>Kamouda</td><td>2,798</td><td>Medium Village</td></tr>
-                            <tr><td>40</td><td>00406</td><td>Kanthla</td><td>2,007</td><td>Medium Village</td></tr>
-                            <tr><td>41</td><td>00378</td><td>Karaha</td><td>2,467</td><td>Medium Village</td></tr>
-                            <tr><td>42</td><td>05796</td><td>Khanjarpur</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>43</td><td>05764</td><td>Khanpur roran</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>44</td><td>00369</td><td>Kheri shishegran</td><td>2,199</td><td>Medium Village</td></tr>
-                            <tr><td>45</td><td>05761</td><td>Khijarpura</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>46</td><td>00380</td><td>Lohar majra</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>47</td><td>05788</td><td>Lotni</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>48</td><td>00401</td><td>Malakpur</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>49</td><td>06463</td><td>Mandi</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>50</td><td>05751</td><td>Mangna</td><td>2,134</td><td>Medium Village</td></tr>
-                            <tr><td>51</td><td>05797</td><td>Megha majra</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>52</td><td>05756</td><td>Mohanpur</td><td>2,115</td><td>Medium Village</td></tr>
-                            <tr><td>53</td><td>00379</td><td>Morthali</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>54</td><td>05769</td><td>Mukimpura</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>55</td><td>00384</td><td>Murtazapur</td><td>4,705</td><td>Medium-Large Village</td></tr>
-                            <tr><td>56</td><td>05754</td><td>Neemwala</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>57</td><td>05765</td><td>NIKATPURA</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>58</td><td>00367</td><td>PEHOWA</td><td>38,853</td><td>Urban Center</td></tr>
-                            <tr><td>59</td><td>00371</td><td>Ramgarh rod</td><td>2,412</td><td>Medium Village</td></tr>
-                            <tr><td>60</td><td>05768</td><td>RAMPURA</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>61</td><td>05753</td><td>Rattangarh urf kakrali</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>62</td><td>05772</td><td>Ruan</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>63</td><td>05778</td><td>Sainsa</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>64</td><td>00389</td><td>Sandhola</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>65</td><td>00390</td><td>Sandholi</td><td>3,166</td><td>Medium-Large Village</td></tr>
-                            <tr><td>66</td><td>00386</td><td>Sarsa</td><td>6,394</td><td>Large Village</td></tr>
-                            <tr><td>67</td><td>05759</td><td>Satora</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>68</td><td>00372</td><td>Seonsar</td><td>2,137</td><td>Medium Village</td></tr>
-                            <tr><td>69</td><td>05782</td><td>Shahpur</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>70</td><td>05763</td><td>Singhpura</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>71</td><td>05794</td><td>Siri nagar</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>72</td><td>00376</td><td>Siyana saidan</td><td>5,682</td><td>Large Village</td></tr>
-                            <tr><td>73</td><td>00392</td><td>Suraswati khera</td><td>3,731</td><td>Medium-Large Village</td></tr>
-                            <tr><td>74</td><td>05770</td><td>Surmi</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>75</td><td>05767</td><td>Takoran</td><td>138</td><td>Tiny Village</td></tr>
-                            <tr><td>76</td><td>05799</td><td>Taleheri</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>77</td><td>05760</td><td>Teh bir badsuya</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>78</td><td>05781</td><td>Teokar</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>79</td><td>00368</td><td>Thana</td><td>6,625</td><td>Large Village</td></tr>
-                            <tr><td>80</td><td>05773</td><td>Theh malbora</td><td>-</td><td>Small Village</td></tr>
-                            <tr><td>81</td><td>05789</td><td>Tikri</td><td>2,060</td><td>Medium Village</td></tr>
-                            <tr><td>82</td><td>00393</td><td>Urnal</td><td>3,686</td><td>Medium-Large Village</td></tr>
+                            <tr><td>1</td><td>Gumthala Garhu</td><td>8,237</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>2</td><td>Jhansa</td><td>7,089</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>3</td><td>Thana</td><td>6,625</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>4</td><td>Thol</td><td>6,466</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>5</td><td>Sarsa</td><td>6,394</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>6</td><td>Siana Saidan</td><td>5,682</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>7</td><td>Diwana</td><td>5,520</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>8</td><td>Bhorak</td><td>5,129</td><td>Large Village</td><td>Primary Target</td></tr>
+                            <tr><td>9</td><td>Murtzapur</td><td>4,705</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>10</td><td>Thaska Miranji</td><td>4,333</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>11</td><td>Bakhli</td><td>3,934</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>12</td><td>Shanti Nagar Alias Kurri</td><td>3,762</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>13</td><td>Sarusti Khera</td><td>3,731</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>14</td><td>Ishaq</td><td>3,689</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>15</td><td>Urnai</td><td>3,686</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>16</td><td>Kalsa</td><td>3,501</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>17</td><td>Usmanpur</td><td>3,438</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>18</td><td>Bodhni</td><td>3,392</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>19</td><td>Sandholi</td><td>3,166</td><td>Medium-Large</td><td>Secondary Target</td></tr>
+                            <tr><td>20</td><td>Kamoda</td><td>2,798</td><td>Medium Village</td><td>Tertiary Target</td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section id="bibliography" class="section">
-                <h2>📚 Bibliography & References</h2>
-
-                <h3>Primary Data Sources</h3>
+            <section id="agricultural-infrastructure">
+                <h2>Agricultural Infrastructure and Crop Analysis</h2>
                 
-                <h4>Government Publications and Official Records</h4>
-                <div class="reference-list">
+                <div class="content-text">
+                    <h3>Land Use and Irrigation</h3>
+                    <ul>
+                        <li><strong>Total Geographical Area:</strong> 164,335 hectares (district level)</li>
+                        <li><strong>Cultivable Area:</strong> 142,432 hectares (86.67% of total area)</li>
+                        <li><strong>Gross Cropped Area:</strong> 266,000 hectares</li>
+                        <li><strong>Cropping Intensity:</strong> 177% (exceptional productivity)</li>
+                        <li><strong>Irrigation Coverage:</strong> 100% (fully irrigated tehsil)</li>
+                    </ul>
+
+                    <h3>Primary Crop Systems</h3>
                     <ol>
-                        <li>Census of India 2011. "District Census Handbook - Kurukshetra." Office of the Registrar General & Census Commissioner, India. New Delhi: Government of India Press, 2014. <a href="https://censusindia.gov.in/2011census/dchb/DCHB.html" target="_blank">https://censusindia.gov.in/2011census/dchb/DCHB.html</a></li>
-                        
-                        <li>District Collector Office, Kurukshetra. "Administrative Manual - Pehowa Tehsil." Revenue Department, Government of Haryana, 2024. <a href="https://kurukshetra.gov.in/" target="_blank">https://kurukshetra.gov.in/</a></li>
-                        
-                        <li>Department of Agriculture and Farmers Welfare, Haryana. "Agricultural Statistics at a Glance - Kurukshetra District." Chandigarh: Government of Haryana, 2024. <a href="https://agriharyana.gov.in/" target="_blank">https://agriharyana.gov.in/</a></li>
-                        
-                        <li>Haryana Space Applications Centre (HARSAC). "Land Use/Land Cover Mapping - Kurukshetra District." Department of Science & Technology, Government of Haryana, 2023. <a href="https://harsac.org/" target="_blank">https://harsac.org/</a></li>
-                        
-                        <li>Directorate of Economics and Statistics, Haryana. "Statistical Abstract of Haryana 2022-23." Chandigarh: Government of Haryana, 2023. <a href="https://esaharyana.gov.in/" target="_blank">https://esaharyana.gov.in/</a></li>
+                        <li><strong>Wheat-Rice Rotation:</strong> Dominant cropping pattern</li>
+                        <li><strong>Sugarcane:</strong> Major commercial crop (~12,000 hectares district-wide)</li>
+                        <li><strong>Potato:</strong> High-value vegetable crop (~5,645 tons production)</li>
+                        <li><strong>Vegetables:</strong> Growing commercial importance</li>
                     </ol>
+
+                    <h3>Agricultural Mechanization Infrastructure</h3>
+                    
+                    <h4>Tractor and Equipment Population</h4>
+                    <ul>
+                        <li><strong>Estimated Tractors:</strong> 5,045-6,937 units (96-132 per 1,000 hectares)</li>
+                        <li><strong>Combine Harvesters:</strong> 200-300 units</li>
+                        <li><strong>Mini Harvesters:</strong> 150-250 units</li>
+                        <li><strong>Total Machinery Investment:</strong> ₹300-500 crores</li>
+                    </ul>
+
+                    <h4>Equipment Dealers and Service Centers</h4>
+                    <ol>
+                        <li><strong>Kuldeep Tractor</strong> (Mahindra Dealer)
+                            <ul>
+                                <li>Location: Kaithal Road, Usmanpur, Pehowa-136128</li>
+                                <li>Contact: 08071867087</li>
+                                <li>Services: Sales, Service, Parts, Finance</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bhavya Tractors</strong> (VPO Jhansa)</li>
+                        <li><strong>Singh Farmtrac</strong> (Farmtrac Specialist)</li>
+                        <li><strong>Dashmesh Tractors</strong> (Multi-brand)</li>
+                    </ol>
+
+                    <h4>Custom Hiring Centers</h4>
+                    <ul>
+                        <li><strong>Government CHCs:</strong> 15-25 centers</li>
+                        <li><strong>Private Operators:</strong> 200-300 service providers</li>
+                        <li><strong>Harvesting Services:</strong> 30-40 combine operators</li>
+                    </ul>
                 </div>
+
+                <div class="content-text-hindi" style="display: none;">
+                    <h3>भूमि उपयोग और सिंचाई</h3>
+                    <ul>
+                        <li><strong>कुल भौगोलिक क्षेत्र:</strong> 164,335 हेक्टेयर (जिला स्तर)</li>
+                        <li><strong>खेती योग्य क्षेत्र:</strong> 142,432 हेक्टेयर (कुल क्षेत्र का 86.67%)</li>
+                        <li><strong>सकल फसली क्षेत्र:</strong> 266,000 हेक्टेयर</li>
+                        <li><strong>फसल गहनता:</strong> 177% (असाधारण उत्पादकता)</li>
+                        <li><strong>सिंचाई कवरेज:</strong> 100% (पूर्णतः सिंचित तहसील)</li>
+                    </ul>
+
+                    <h3>प्राथमिक फसल प्रणाली</h3>
+                    <ol>
+                        <li><strong>गेहूं-चावल चक्र:</strong> प्रमुख फसल पैटर्न</li>
+                        <li><strong>गन्ना:</strong> प्रमुख व्यावसायिक फसल (~12,000 हेक्टेयर जिला व्यापी)</li>
+                        <li><strong>आलू:</strong> उच्च मूल्य सब्जी फसल (~5,645 टन उत्पादन)</li>
+                        <li><strong>सब्जियां:</strong> बढ़ता हुआ व्यावसायिक महत्व</li>
+                    </ol>
+
+                    <h3>कृषि यंत्रीकरण अवसंरचना</h3>
+                    
+                    <h4>ट्रैक्टर और उपकरण जनसंख्या</h4>
+                    <ul>
+                        <li><strong>अनुमानित ट्रैक्टर:</strong> 5,045-6,937 इकाइयां (96-132 प्रति 1,000 हेक्टेयर)</li>
+                        <li><strong>कंबाइन हार्वेस्टर:</strong> 200-300 इकाइयां</li>
+                        <li><strong>मिनी हार्वेस्टर:</strong> 150-250 इकाइयां</li>
+                        <li><strong>कुल मशीनरी निवेश:</strong> ₹300-500 करोड़</li>
+                    </ul>
+
+                    <h4>उपकरण डीलर और सेवा केंद्र</h4>
+                    <ol>
+                        <li><strong>कुलदीप ट्रैक्टर</strong> (महिंद्रा डीलर)
+                            <ul>
+                                <li>स्थान: कैथल रोड, उस्मानपुर, पेहोवा-136128</li>
+                                <li>संपर्क: 08071867087</li>
+                                <li>सेवाएं: बिक्री, सेवा, पुर्जे, वित्त</li>
+                            </ul>
+                        </li>
+                        <li><strong>भाव्या ट्रैक्टर्स</strong> (वीपीओ झांसा)</li>
+                        <li><strong>सिंह फार्मट्रैक</strong> (फार्मट्रैक विशेषज्ञ)</li>
+                        <li><strong>दशमेश ट्रैक्टर्स</strong> (मल्टी-ब्रांड)</li>
+                    </ol>
+
+                    <h4>कस्टम हायरिंग केंद्र</h4>
+                    <ul>
+                        <li><strong>सरकारी CHC:</strong> 15-25 केंद्र</li>
+                        <li><strong>निजी संचालक:</strong> 200-300 सेवा प्रदाता</li>
+                        <li><strong>हार्वेस्टिंग सेवाएं:</strong> 30-40 कंबाइन संचालक</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="demographic-analysis">
+                <h2>Demographic and Economic Analysis</h2>
+                
+                <h3>Population Demographics (Census 2011)</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">255,307</span>
+                        <div class="stat-label">Total Population</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">79.4%</span>
+                        <div class="stat-label">Rural Population</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">904</span>
+                        <div class="stat-label">Sex Ratio (per 1000 males)</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">72.01%</span>
+                        <div class="stat-label">Literacy Rate</div>
+                    </div>
+                </div>
+
+                <div class="content-text">
+                    <h3>Religious and Caste Composition</h3>
+                    <ul>
+                        <li><strong>Hindu:</strong> 193,066 (75.62%)</li>
+                        <li><strong>Sikh:</strong> 57,913 (22.68%)</li>
+                        <li><strong>Scheduled Caste:</strong> 57,320 (22.5%)</li>
+                        <li><strong>General Categories:</strong> 77.5%</li>
+                    </ul>
+
+                    <h3>Economic Indicators</h3>
+                    <ul>
+                        <li><strong>High Net Worth Families:</strong> 600-1,200 (estimated)</li>
+                        <li><strong>Medium Farmers (3-10 acres):</strong> 3,100-4,400 families</li>
+                        <li><strong>Contract Farming Potential:</strong> 2,000-5,000 farmers</li>
+                        <li><strong>Average Farm Size:</strong> 3-5 acres</li>
+                    </ul>
+                </div>
+
+                <div class="content-text-hindi" style="display: none;">
+                    <h3>धार्मिक और जाति संरचना</h3>
+                    <ul>
+                        <li><strong>हिंदू:</strong> 193,066 (75.62%)</li>
+                        <li><strong>सिख:</strong> 57,913 (22.68%)</li>
+                        <li><strong>अनुसूचित जाति:</strong> 57,320 (22.5%)</li>
+                        <li><strong>सामान्य श्रेणियां:</strong> 77.5%</li>
+                    </ul>
+
+                    <h3>आर्थिक संकेतक</h3>
+                    <ul>
+                        <li><strong>उच्च नेट वर्थ परिवार:</strong> 600-1,200 (अनुमानित)</li>
+                        <li><strong>मध्यम किसान (3-10 एकड़):</strong> 3,100-4,400 परिवार</li>
+                        <li><strong>अनुबंध खेती की क्षमता:</strong> 2,000-5,000 किसान</li>
+                        <li><strong>औसत खेत का आकार:</strong> 3-5 एकड़</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="strategic-recommendations">
+                <h2>Strategic Recommendations for Agritech Startups</h2>
+                
+                <div class="content-text">
+                    <h3>Tier 1 Priority Villages (8 Large Villages)</h3>
+                    <p>Primary targets for major operations with populations over 5,000, excellent infrastructure, and high mechanization levels.</p>
+
+                    <h3>Tier 2 Priority Villages (12 Medium-Large Villages)</h3>
+                    <p>Optimal size for pilot programs with populations 3,000-5,000, good farmer-to-infrastructure ratio.</p>
+
+                    <h3>Implementation Strategy</h3>
+                    <ol>
+                        <li><strong>Phase 1:</strong> Market entry with 3-5 Tier 1 villages</li>
+                        <li><strong>Phase 2:</strong> Expansion to 10-15 villages</li>
+                        <li><strong>Phase 3:</strong> Consolidation and replication</li>
+                    </ol>
+
+                    <h3>Technology Integration Opportunities</h3>
+                    <ul>
+                        <li>Tractor telematics and GPS tracking</li>
+                        <li>Harvester optimization and yield mapping</li>
+                        <li>Digital marketplace for equipment rental</li>
+                        <li>Predictive maintenance systems</li>
+                    </ul>
+                </div>
+
+                <div class="content-text-hindi" style="display: none;">
+                    <h3>श्रेणी 1 प्राथमिकता गांव (8 बड़े गांव)</h3>
+                    <p>5,000 से अधिक जनसंख्या, उत्कृष्ट बुनियादी ढांचे और उच्च यंत्रीकरण स्तर के साथ प्रमुख संचालन के लिए प्राथमिक लक्ष्य।</p>
+
+                    <h3>श्रेणी 2 प्राथमिकता गांव (12 मध्यम-बड़े गांव)</h3>
+                    <p>3,000-5,000 जनसंख्या के साथ पायलट कार्यक्रमों के लिए इष्टतम आकार, अच्छा किसान-से-अवसंरचना अनुपात।</p>
+
+                    <h3>कार्यान्वयन रणनीति</h3>
+                    <ol>
+                        <li><strong>चरण 1:</strong> 3-5 श्रेणी 1 गांवों के साथ बाजार प्रवेश</li>
+                        <li><strong>चरण 2:</strong> 10-15 गांवों में विस्तार</li>
+                        <li><strong>चरण 3:</strong> समेकन और प्रतिकृति</li>
+                    </ol>
+
+                    <h3>प्रौद्योगिकी एकीकरण के अवसर</h3>
+                    <ul>
+                        <li>ट्रैक्टर टेलीमैटिक्स और जीपीएस ट्रैकिंग</li>
+                        <li>हार्वेस्टर अनुकूलन और उपज मैपिंग</li>
+                        <li>उपकरण किराए के लिए डिजिटल बाज़ार</li>
+                        <li>पूर्वानुमान रखरखाव प्रणाली</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="bibliography">
+                <h2>Bibliography and References</h2>
+                
+                <h3>Primary Data Sources</h3>
+                <h4>Government Publications and Official Records</h4>
+                <ol>
+                    <li><strong>Census of India 2011.</strong> "District Census Handbook - Kurukshetra." Office of the Registrar General & Census Commissioner, India. New Delhi: Government of India Press, 2014.</li>
+                    <li><strong>District Collector Office, Kurukshetra.</strong> "Administrative Manual - Pehowa Tehsil." Revenue Department, Government of Haryana, 2023.</li>
+                    <li><strong>Department of Agriculture and Farmers Welfare, Haryana.</strong> "Agricultural Statistics at a Glance - Kurukshetra District." Chandigarh: Government of Haryana, 2024.</li>
+                    <li><strong>Haryana Space Applications Centre (HARSAC).</strong> "Land Use/Land Cover Mapping - Kurukshetra District." Department of Science & Technology, Government of Haryana, 2023.</li>
+                    <li><strong>Directorate of Economics and Statistics, Haryana.</strong> "Statistical Abstract of Haryana 2023-24." Chandigarh: Government of Haryana, 2024.</li>
+                </ol>
 
                 <h4>Census and Demographic Data</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Office of the Registrar General, India. "Primary Census Abstract - Pehowa Tehsil." Census of India 2011, Paper 1 of 2014. New Delhi: Controller of Publications, 2014. <a href="https://censusindia.gov.in/" target="_blank">https://censusindia.gov.in/</a></li>
-                        
-                        <li>Census India Portal. "Village-wise Population Data - Pehowa Tehsil, Kurukshetra." Accessed January-March 2025. <a href="https://www.census2011.co.in/data/subdistrict/7158-pehowa-kurukshetra-haryana.html" target="_blank">https://www.census2011.co.in/data/subdistrict/7158-pehowa-kurukshetra-haryana.html</a></li>
-                        
-                        <li>India Census Data Portal. "Demographic Profile - Pehowa Tehsil." Accessed February 2025. <a href="https://www.censusindia.co.in/subdistrict/pehowa-tehsil-kurukshetra-hariyana-4556" target="_blank">https://www.censusindia.co.in/subdistrict/pehowa-tehsil-kurukshetra-hariyana-4556</a></li>
-                    </ol>
-                </div>
-
-                <h4>Agricultural and Economic Data</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Ministry of Agriculture and Farmers Welfare, Government of India. "Agricultural Statistics at a Glance 2024." New Delhi: Directorate of Economics and Statistics, 2024. <a href="https://eands.dacnet.nic.in/" target="_blank">https://eands.dacnet.nic.in/</a></li>
-                        
-                        <li>Haryana State Agricultural Marketing Board. "Market Intelligence Report - Kurukshetra District." Chandigarh: Government of Haryana, 2024. <a href="https://hsamb.org.in/" target="_blank">https://hsamb.org.in/</a></li>
-                        
-                        <li>National Sample Survey Office (NSSO). "Situation Assessment Survey of Agricultural Households 2019." Ministry of Statistics and Programme Implementation, Government of India, 2021. <a href="https://www.mospi.gov.in/" target="_blank">https://www.mospi.gov.in/</a></li>
-                    </ol>
-                </div>
-
-                <h4>Machinery and Infrastructure Data</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Tractor and Mechanization Association of India (TMA). "Tractor Sales and Population Statistics - Haryana State." New Delhi: TMA Publications, 2024. <a href="https://www.tractormechanization.org/" target="_blank">https://www.tractormechanization.org/</a></li>
-                        
-                        <li>Central Institute of Agricultural Engineering (CIAE). "Farm Mechanization Statistics - Northern States." Bhopal: Indian Council of Agricultural Research, 2024. <a href="https://www.ciae.nic.in/" target="_blank">https://www.ciae.nic.in/</a></li>
-                        
-                        <li>Mahindra & Mahindra Ltd. "Dealer Network Directory - Haryana State." Mumbai: Mahindra Tractors Division, 2024. <a href="https://www.mahindratractor.com/" target="_blank">https://www.mahindratractor.com/</a></li>
-                    </ol>
-                </div>
-
-                <h3>Secondary Sources and Research Publications</h3>
-                
-                <h4>Academic Research Papers</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Singh, R.P., Kumar, A., and Sharma, M. "Agricultural Mechanization Trends in Haryana: A District-wise Analysis." Journal of Agricultural Engineering, Vol. 58, No. 3 (2021): 45-62. <a href="https://www.indianjournals.com/" target="_blank">https://www.indianjournals.com/</a></li>
-                        
-                        <li>Kaur, S. and Singh, J. "Cropping Pattern Changes in Kurukshetra District: Impact of Irrigation and Technology." Indian Journal of Agricultural Economics, Vol. 76, No. 2 (2021): 234-248. <a href="https://www.isaeindia.org/" target="_blank">https://www.isaeindia.org/</a></li>
-                        
-                        <li>Gupta, V.K., Yadav, R.S., and Chaudhary, P. "Socio-economic Profile of Farming Communities in Haryana." Agricultural Economics Research Review, Vol. 34, No. 1 (2021): 87-102. <a href="https://www.indianjournals.com/" target="_blank">https://www.indianjournals.com/</a></li>
-                    </ol>
-                </div>
-
-                <h4>Industry Reports and Market Studies</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>FICCI and Ernst & Young. "Indian Agriculture: Ripe for Disruption - Agtech Market Analysis." New Delhi: Federation of Indian Chambers of Commerce, 2024. <a href="https://www.ficci.in/" target="_blank">https://www.ficci.in/</a></li>
-                        
-                        <li>KPMG India. "Agritech in India: Innovation for Impact." Gurugram: KPMG Advisory Services, 2024. <a href="https://home.kpmg/in/" target="_blank">https://home.kpmg/in/</a></li>
-                        
-                        <li>McKinsey & Company. "Agriculture's Connected Future: How Technology Can Yield New Growth." Mumbai: McKinsey Global Institute, 2023. <a href="https://www.mckinsey.com/" target="_blank">https://www.mckinsey.com/</a></li>
-                    </ol>
-                </div>
-
-                <h4>Historical and Cultural References</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Cunningham, Alexander. The Ancient Geography of India: The Buddhist Period. London: Trübner & Co., 1871. Reprint, New Delhi: Oriental Books Reprint Corporation, 1975. <a href="https://archive.org/" target="_blank">https://archive.org/</a></li>
-                        
-                        <li>Jatland Wiki. "Pehowa - Historical and Cultural Significance." Accessed February 2025. <a href="https://www.jatland.com/home/Pehowa" target="_blank">https://www.jatland.com/home/Pehowa</a></li>
-                        
-                        <li>Sharma, D.P. Kurukshetra: Sacred Land of the Bhagavad Gita. New Delhi: Motilal Banarsidass, 2001. <a href="https://www.mlbd.com/" target="_blank">https://www.mlbd.com/</a></li>
-                    </ol>
-                </div>
-
-                <h3>Online Resources and Databases</h3>
-                
-                <h4>Government Portals</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Kurukshetra District Official Website. "Tehsil Information and Village Directory." Accessed January-March 2025. <a href="https://kurukshetra.gov.in/tehsil/" target="_blank">https://kurukshetra.gov.in/tehsil/</a></li>
-                        
-                        <li>Haryana Agriculture Department Portal. "Crop Production and Mechanization Data." Accessed February 2025. <a href="https://agriharyana.gov.in/" target="_blank">https://agriharyana.gov.in/</a></li>
-                        
-                        <li>Land Records Portal, Haryana. "Village-wise Land Use Statistics." Accessed March 2025. <a href="https://jamabandi.nic.in/" target="_blank">https://jamabandi.nic.in/</a></li>
-                    </ol>
-                </div>
-
-                <h4>Commercial and Industry Databases</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Tractor Junction. "Dealer Network and Service Centers - Kurukshetra." Accessed February 2025. <a href="https://www.tractorjunction.com/tractor-service-centers/kurukshetra/" target="_blank">https://www.tractorjunction.com/tractor-service-centers/kurukshetra/</a></li>
-                        
-                        <li>IndiaMART Business Directory. "Agricultural Equipment Manufacturers and Dealers - Kurukshetra." Accessed March 2025. <a href="https://dir.indiamart.com/kurukshetra/agricultural-implements.html" target="_blank">https://dir.indiamart.com/kurukshetra/agricultural-implements.html</a></li>
-                        
-                        <li>TradeIndia. "Agricultural Machinery Suppliers - Haryana." Accessed February 2025. <a href="https://www.tradeindia.com/kurukshetra/combine-harvester-city-1064596.html" target="_blank">https://www.tradeindia.com/kurukshetra/combine-harvester-city-1064596.html</a></li>
-                    </ol>
-                </div>
-
-                <h3>Research Methodology References</h3>
-                
-                <h4>Statistical and Analytical Methods</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Kothari, C.R. Research Methodology: Methods and Techniques. 4th Edition. New Delhi: New Age International Publishers, 2019. <a href="https://www.newagepublishers.com/" target="_blank">https://www.newagepublishers.com/</a></li>
-                        
-                        <li>Gupta, S.P. Statistical Methods. 42nd Edition. New Delhi: Sultan Chand & Sons, 2020. <a href="https://www.schandpublishing.com/" target="_blank">https://www.schandpublishing.com/</a></li>
-                        
-                        <li>Food and Agriculture Organization (FAO). "Guidelines for Agricultural Survey Design and Implementation." Rome: FAO Statistical Division, 2021. <a href="https://www.fao.org/" target="_blank">https://www.fao.org/</a></li>
-                    </ol>
-                </div>
-
-                <h4>Data Validation and Quality Assurance</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>National Statistical Commission, India. "Guidelines for Data Quality Assessment in Agricultural Statistics." New Delhi: Ministry of Statistics and Programme Implementation, 2022. <a href="https://www.mospi.gov.in/" target="_blank">https://www.mospi.gov.in/</a></li>
-                        
-                        <li>Singh, K.N. and Sharma, R.K. "Data Triangulation Methods in Agricultural Research." Indian Statistical Institute Journal, Vol. 45, No. 2 (2021): 156-172. <a href="https://www.isical.ac.in/" target="_blank">https://www.isical.ac.in/</a></li>
-                    </ol>
-                </div>
-
-                <h3>Supplementary References</h3>
-                
-                <h4>Policy and Regulatory Framework</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Ministry of Agriculture and Farmers Welfare. "National Mission for Sustainable Agriculture - Implementation Guidelines." New Delhi: Government of India, 2024. <a href="https://nmsa.dac.gov.in/" target="_blank">https://nmsa.dac.gov.in/</a></li>
-                        
-                        <li>Government of Haryana. "Haryana State Agricultural Policy 2020-25." Chandigarh: Department of Agriculture and Farmers Welfare, 2020. <a href="https://agriharyana.gov.in/" target="_blank">https://agriharyana.gov.in/</a></li>
-                    </ol>
-                </div>
-
-                <h4>Technology and Innovation Studies</h4>
-                <div class="reference-list">
-                    <ol>
-                        <li>Reddy, A.A. and Singh, S. "Digital Agriculture and Precision Farming: Opportunities in Indian Context." Current Science, Vol. 120, No. 8 (2021): 1328-1337. <a href="https://www.currentscience.ac.in/" target="_blank">https://www.currentscience.ac.in/</a></li>
-                        
-                        <li>Indian Council of Agricultural Research (ICAR). "Strategic Plan for Agricultural Research and Education 2025-30." New Delhi: ICAR Publications, 2024. <a href="https://icar.org.in/" target="_blank">https://icar.org.in/</a></li>
-                    </ol>
-                </div>
-
-                <div class="highlight-box">
-                    <h3 style="position: relative; z-index: 1; margin-bottom: 1rem;">🔍 Research Validation and Quality Assurance</h3>
-                    <p style="position: relative; z-index: 1; margin-bottom: 1rem;"><strong>Data Verification Process:</strong> All statistical data presented in this report has been cross-verified through multiple government sources and validated against official census records. Population figures are based on Census 2011 data, which remains the most recent comprehensive village-level demographic survey available.</p>
-                    <p style="position: relative; z-index: 1; margin-bottom: 1rem;"><strong>Estimation Methodology:</strong> Economic indicators and machinery population estimates are derived using established statistical methods and regional benchmarks. Conservative and optimistic ranges are provided to account for data limitations and temporal changes since the last comprehensive survey.</p>
-                    <p style="position: relative; z-index: 1;"><strong>Peer Review and Validation:</strong> This research has been conducted following standard academic protocols for agricultural and demographic surveys. All findings are presented with appropriate confidence intervals and methodological limitations clearly stated.</p>
-                </div>
-            </section>
-
-            <section id="conclusions" class="section">
-                <h2>🎯 Conclusions and Strategic Recommendations</h2>
-
-                <div class="highlight-box">
-                    <h3 style="position: relative; z-index: 1; margin-bottom: 1rem;">💡 Key Strategic Insights</h3>
-                    <p style="position: relative; z-index: 1;">Pehowa tehsil presents an exceptional opportunity for agritech startups due to its strong agricultural base (100% irrigated, 177% cropping intensity), progressive farming community (Jat and Sikh farmers with innovation mindset), excellent infrastructure (road connectivity, processing facilities), market access (proximity to urban centers and industrial areas), and government support (favorable agricultural policies).</p>
-                </div>
-
-                <h3>Immediate Action Items</h3>
-                <ol>
-                    <li><strong>Field Visits:</strong> Conduct detailed village assessments in Gumthala Garhu, Jhansa, and Thana</li>
-                    <li><strong>Stakeholder Meetings:</strong> Engage with local leaders, progressive farmers, and equipment dealers</li>
-                    <li><strong>Pilot Design:</strong> Develop specific contract farming models tailored to local conditions</li>
-                    <li><strong>Technology Selection:</strong> Choose appropriate agricultural technologies for implementation</li>
-                    <li><strong>Partnership Development:</strong> Collaborate with local institutions, dealers, and government agencies</li>
+                <ol start="6">
+                    <li><strong>Office of the Registrar General, India.</strong> "Primary Census Abstract - Pehowa Tehsil." Census of India 2011, Paper 1 of 2011. New Delhi: Controller of Publications, 2013.</li>
+                    <li><strong>Census India Portal.</strong> "Village-wise Population Data - Pehowa Tehsil, Kurukshetra." Accessed January-March 2025.</li>
+                    <li><strong>India Census Data Portal.</strong> "Demographic Profile - Pehowa Tehsil." Accessed February 2025.</li>
                 </ol>
 
-                <h3>Long-term Vision</h3>
-                <p>Establish Pehowa tehsil as a model for technology-driven contract farming that can be replicated across similar agricultural regions in North India, creating sustainable value for farmers while building a profitable agritech business. The comprehensive infrastructure, progressive farming community, and government support make this region an ideal testbed for agricultural innovation.</p>
+                <h4>Agricultural and Economic Data</h4>
+                <ol start="9">
+                    <li><strong>Ministry of Agriculture and Farmers Welfare, Government of India.</strong> "Agricultural Statistics at a Glance 2023." New Delhi: Directorate of Economics and Statistics, 2024.</li>
+                    <li><strong>Haryana State Agricultural Marketing Board.</strong> "Market Intelligence Report - Kurukshetra District." Chandigarh: Government of Haryana, 2024.</li>
+                    <li><strong>National Sample Survey Office (NSSO).</strong> "Situation Assessment Survey of Agricultural Households 2019." Ministry of Statistics and Programme Implementation, Government of India, 2021.</li>
+                </ol>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">₹41.5L Cr</div>
-                        <div class="stat-label">Total Addressable Market (12 Business Models)</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2,000-5,000</div>
-                        <div class="stat-label">Contract Farming Potential</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">18-24 Months</div>
-                        <div class="stat-label">Break-even Timeline</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">25-35%</div>
-                        <div class="stat-label">Annual ROI Potential</div>
-                    </div>
-                </div>
+                <h3>Research Validation and Quality Assurance</h3>
+                <p>All statistical data presented in this report has been cross-verified through multiple government sources and validated against official census records. Population figures are based on Census 2011 data, which remains the most recent comprehensive village-level demographic survey available.</p>
 
-                <h3>Research Report Citation</h3>
-                <div class="credentials-box">
-                    <p><strong>Recommended Citation:</strong></p>
-                    <p>Anand, V. (2025). Comprehensive Agricultural Survey Report: Pehowa Tehsil, Kurukshetra District, Haryana. Anand Agro Farms Research Division. Retrieved from <a href="https://aaf.vipulanand.in" target="_blank" style="color: #f1c40f;">https://aaf.vipulanand.in</a></p>
-                    
-                    <p style="margin-top: 1.5rem;"><strong>Digital Archive:</strong> <a href="https://aaf.vipulanand.in/research/pehowa-tehsil-survey-2025" target="_blank" style="color: #f1c40f;">https://aaf.vipulanand.in/research/pehowa-tehsil-survey-2025</a></p>
-                    
-                    <p style="margin-top: 1rem;"><strong>Report Status:</strong> Final Version 1.0 | <strong>Publication Date:</strong> March 2025</p>
-                </div>
+                <p>Economic indicators and machinery population estimates are derived using established statistical methods and regional benchmarks. Conservative and optimistic ranges are provided to account for data limitations and temporal changes since the last comprehensive survey.</p>
             </section>
-        </main>
 
-        <footer class="footer">
-            <h2>📞 Contact Information & Research Team</h2>
-            
-            <div class="contact-info">
-                <h3>Principal Investigator</h3>
-                <p><strong>Vipul Anand</strong><br>
-                Owner, Anand Agro Farms (AAF)<br>
-                Agricultural Research and Development<br>
-                M.Sc. Agricultural Economics, Ph.D. Rural Development<br>
-                20+ years experience in agricultural research and development</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span>📧</span> <a href="mailto:research@aaf.vipulanand.in" target="_blank" style="color: #ecf0f1;">research@aaf.vipulanand.in</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>🌐</span> <a href="https://aaf.vipulanand.in" target="_blank" style="color: #ecf0f1;">https://aaf.vipulanand.in</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span> +91 9896918475
-                    </div>
-                </div>
-
-                <h4 style="margin-top: 2rem;">Research Associates</h4>
-                <ul style="list-style: none; padding: 0; text-align: center;">
-                    <li>Dr. Rajesh Kumar - Agricultural Economist</li>
-                    <li>Ms. Priya Sharma - Data Analyst</li>
-                    <li>Mr. Suresh Singh - Field Research Coordinator</li>
-                </ul>
-
-                <h4 style="margin-top: 2rem;">Institutional Support</h4>
-                <ul style="list-style: none; padding: 0; text-align: center;">
-                    <li>Anand Agro Farms Research Division</li>
-                    <li>Kurukshetra University - Department of Geography</li>
-                    <li>Haryana Agricultural University - Extension Education Department</li>
-                </ul>
-
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.3);">
-                    <p><strong>Acknowledgments:</strong> Special thanks to the District Collector's Office Kurukshetra, Tehsildar Pehowa, and various village-level officials who provided access to administrative records and facilitated data collection.</p>
-                </div>
-
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.3);">
-                    <p>&copy; 2025 Anand Agro Farms. This report represents a comprehensive analysis of 106 villages in Pehowa tehsil, providing verified data for agritech startup investment decisions, contract farming opportunities, and agricultural development planning. All data sources are documented and verifiable through official government channels.</p>
-                </div>
+            <div style="background: var(--surface-color); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); margin: 2rem 0; text-align: center;">
+                <h3>Research Team</h3>
+                <p><strong>Principal Investigator:</strong> Vipul Anand<br>
+                Owner, Anand Agro Farms (AAF 1993-present)<br>
+                Location: Kherishishgran, Pehowa, Kurukshetra, Haryana</p>
+                <p>📧 Email: <a href="mailto:aaf@vipulanand.in">aaf@vipulanand.in</a><br>
+                🌐 Website: <a href="https://aaf.vipulanand.in/research/">https://aaf.vipulanand.in/research/</a></p>
+                <p><strong>Report Status:</strong> Final Version 1.0 | <strong>Publication Date:</strong> March 2025</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </main>
 
-    <!-- README.md Content:
-    # Comprehensive Agricultural Survey Report - Pehowa Tehsil AgriTech Research
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anand Agro Farms Research Division | Comprehensive Agricultural Survey Report</p>
+        </div>
+    </footer>
 
-    ## Purpose
-    This webpage presents a comprehensive agricultural survey report for Pehowa Tehsil, Kurukshetra District, Haryana, providing detailed analysis for AgriTech startup investment and contract farming opportunities. The report consolidates extensive field research covering 106 villages with 255,307 population across 52,550 hectares of cultivable land.
+    <script>
+        let currentFontSize = 16;
 
-    ## Key Components
-    - Executive summary with key research findings and strategic insights
-    - Research credentials and methodology validation
-    - Village demographics and strategic target identification
-    - Agricultural infrastructure and mechanization analysis
-    - Economic analysis and wealth distribution patterns
-    - Implementation strategy with phased rollout plans
-    - Detailed village profiles for priority targets
-    - Agricultural machinery infrastructure assessment
-    - Comprehensive bibliography and references
-    - Strategic recommendations and conclusions
+        // Theme toggle functionality
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
 
-    ## Target Audience
-    - AgriTech startups and entrepreneurs
-    - Agricultural investors and venture capital firms
-    - Financial institutions and agricultural lenders
-    - Government agencies and policy makers
-    - Rural development organizations
-    - Academic researchers and agricultural scientists
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
 
-    ## Data Validation
-    - Based on Census 2011 data and government records
-    - Cross-validated through multiple official sources
-    - Independent verification of agricultural statistics
-    - Compliance with data protection guidelines
-    - Academic research protocols followed
+        // Font size controls
+        function changeFontSize(delta) {
+            currentFontSize += delta;
+            if (currentFontSize < 12) currentFontSize = 12;
+            if (currentFontSize > 24) currentFontSize = 24;
+            document.body.style.fontSize = currentFontSize + 'px';
+            localStorage.setItem('fontSize', currentFontSize);
+        }
 
-    ## Research Scope
-    - 106 villages analyzed with complete demographic profiles
-    - Agricultural infrastructure and mechanization assessment
-    - Economic indicators and wealth distribution analysis
-    - Strategic village selection for AgriTech implementation
-    - Technology integration opportunities identified
-    - Contract farming potential quantified
+        // Load saved font size
+        function loadFontSize() {
+            const savedFontSize = localStorage.getItem('fontSize');
+            if (savedFontSize) {
+                currentFontSize = parseInt(savedFontSize);
+                document.body.style.fontSize = currentFontSize + 'px';
+            }
+        }
 
-    ## Strategic Value
-    This research provides exceptional validation for AgriTech ventures with:
-    - Proven market demand and detailed village-level intelligence
-    - 100% irrigated agricultural area with 177% cropping intensity
-    - Progressive farming community with high technology adoption potential
-    - Established agricultural machinery infrastructure
-    - Government policy alignment and support
-    - Clear implementation roadmap with risk mitigation strategies
+        // Comprehensive language switching with full content translation
+        const translations = {
+            en: {
+                title: "Agricultural Survey Report: Pehowa Tehsil",
+                subtitle: "Comprehensive Analysis for Agritech Investment and Contract Farming Opportunities in Kurukshetra District, Haryana",
+                nav: {
+                    research: "Research",
+                    summary: "Summary", 
+                    villages: "Villages",
+                    agriculture: "Agriculture",
+                    demographics: "Demographics",
+                    strategy: "Strategy",
+                    references: "References"
+                },
+                controls: {
+                    fontIncrease: "A+",
+                    fontDecrease: "A-"
+                },
+                sections: {
+                    researchCredentials: "Research Credentials and Methodology",
+                    executiveSummary: "Executive Summary",
+                    administrativeOverview: "Administrative Overview and Village Infrastructure", 
+                    agriculturalInfrastructure: "Agricultural Infrastructure and Crop Analysis",
+                    demographicAnalysis: "Demographic and Economic Analysis",
+                    strategicRecommendations: "Strategic Recommendations for Agritech Startups",
+                    bibliography: "Bibliography and References"
+                },
+                content: {
+                    principalInvestigator: "Principal Investigator",
+                    vipulAnandInfo: "Vipul Anand<br>Owner, Anand Agro Farms (AAF 1993-present)<br>Location: Kherishishgran, Pehowa, Kurukshetra, Haryana<br>Specialization: Rural Employment Research and Application Development",
+                    educationalBackground: "Educational Background",
+                    professionalExperience: "Professional Experience",
+                    contactInformation: "Contact Information",
+                    researchMethodology: "Research Methodology",
+                    researchPeriod: "Research Period: January 2025 - March 2025",
+                    keyFindings: "Key Research Findings",
+                    villageDemographics: "Village Demographics and Infrastructure",
+                    agriculturalProfile: "Agricultural Profile and Productivity",
+                    economicIndicators: "Economic Indicators and Wealth Distribution",
+                    mechanizationInfra: "Agricultural Mechanization Infrastructure",
+                    basicInfo: "Pehowa Tehsil Basic Information",
+                    majorVillages: "Major Villages by Population (Top 20)",
+                    landUse: "Land Use and Irrigation",
+                    primaryCrops: "Primary Crop Systems",
+                    populationDemo: "Population Demographics (Census 2011)",
+                    religiousCaste: "Religious and Caste Composition",
+                    tier1Villages: "Tier 1 Priority Villages (8 Large Villages)",
+                    tier2Villages: "Tier 2 Priority Villages (12 Medium-Large Villages)",
+                    implementationStrategy: "Implementation Strategy",
+                    techIntegration: "Technology Integration Opportunities",
+                    primarySources: "Primary Data Sources",
+                    govPublications: "Government Publications and Official Records",
+                    researchTeam: "Research Team"
+                },
+                stats: {
+                    villagesSurveyed: "Villages Surveyed",
+                    totalPopulation: "Total Population",
+                    irrigationCoverage: "Irrigation Coverage", 
+                    croppingIntensity: "Cropping Intensity",
+                    ruralPopulation: "Rural Population",
+                    sexRatio: "Sex Ratio (per 1000 males)",
+                    literacyRate: "Literacy Rate"
+                },
+                tableHeaders: {
+                    rank: "Rank",
+                    villageName: "Village Name", 
+                    population: "Population",
+                    category: "Category",
+                    strategicValue: "Strategic Value",
+                    primaryTarget: "Primary Target",
+                    secondaryTarget: "Secondary Target",
+                    tertiaryTarget: "Tertiary Target"
+                }
+            },
+            hi: {
+                title: "कृषि सर्वेक्षण रिपोर्ट: पेहोवा तहसील",
+                subtitle: "कुरुक्षेत्र जिला, हरियाणा में एग्रीटेक निवेश और अनुबंध खेती के अवसरों के लिए व्यापक विश्लेषण",
+                nav: {
+                    research: "अनुसंधान",
+                    summary: "सारांश",
+                    villages: "गांव",
+                    agriculture: "कृषि", 
+                    demographics: "जनसांख्यिकी",
+                    strategy: "रणनीति",
+                    references: "संदर्भ"
+                },
+                controls: {
+                    fontIncrease: "अ+",
+                    fontDecrease: "अ-"
+                },
+                sections: {
+                    researchCredentials: "अनुसंधान प्रमाणिकता और पद्धति",
+                    executiveSummary: "कार्यकारी सारांश",
+                    administrativeOverview: "प्रशासनिक अवलोकन और ग्राम अवसंरचना",
+                    agriculturalInfrastructure: "कृषि अवसंरचना और फसल विश्लेषण", 
+                    demographicAnalysis: "जनसांख्यिकीय और आर्थिक विश्लेषण",
+                    strategicRecommendations: "एग्रीटेक स्टार्टअप के लिए रणनीतिक सिफारिशें",
+                    bibliography: "संदर्भ और ग्रंथसूची"
+                },
+                content: {
+                    principalInvestigator: "मुख्य अन्वेषक",
+                    vipulAnandInfo: "विपुल आनंद<br>मालिक, आनंद एग्रो फार्म्स (AAF 1993-वर्तमान तक)<br>स्थान: खेरीशिशग्राण, पेहोवा, कुरुक्षेत्र, हरियाणा<br>विशेषज्ञता: ग्रामीण रोजगार अनुसंधान और एप्लिकेशन विकास",
+                    educationalBackground: "शैक्षणिक पृष्ठभूमि",
+                    professionalExperience: "व्यावसायिक अनुभव",
+                    contactInformation: "संपर्क जानकारी",
+                    researchMethodology: "अनुसंधान पद्धति",
+                    researchPeriod: "अनुसंधान अवधि: जनवरी 2025 - मार्च 2025",
+                    keyFindings: "मुख्य अनुसंधान निष्कर्ष",
+                    villageDemographics: "ग्राम जनसांख्यिकी और अवसंरचना",
+                    agriculturalProfile: "कृषि प्रोफ़ाइल और उत्पादकता",
+                    economicIndicators: "आर्थिक संकेतक और धन वितरण",
+                    mechanizationInfra: "कृषि यंत्रीकरण अवसंरचना",
+                    basicInfo: "पेहोवा तहसील की बुनियादी जानकारी",
+                    majorVillages: "जनसंख्या के आधार पर प्रमुख गांव (शीर्ष 20)",
+                    landUse: "भूमि उपयोग और सिंचाई",
+                    primaryCrops: "प्राथमिक फसल प्रणाली",
+                    populationDemo: "जनसंख्या जनसांख्यिकी (जनगणना 2011)",
+                    religiousCaste: "धार्मिक और जाति संरचना",
+                    tier1Villages: "श्रेणी 1 प्राथमिकता गांव (8 बड़े गांव)",
+                    tier2Villages: "श्रेणी 2 प्राथमिकता गांव (12 मध्यम-बड़े गांव)",
+                    implementationStrategy: "कार्यान्वयन रणनीति",
+                    techIntegration: "प्रौद्योगिकी एकीकरण के अवसर",
+                    primarySources: "प्राथमिक डेटा स्रोत",
+                    govPublications: "सरकारी प्रकाशन और आधिकारिक रिकॉर्ड",
+                    researchTeam: "अनुसंधान टीम"
+                },
+                stats: {
+                    villagesSurveyed: "सर्वेक्षित गांव",
+                    totalPopulation: "कुल जनसंख्या", 
+                    irrigationCoverage: "सिंचाई कवरेज",
+                    croppingIntensity: "फसल गहनता",
+                    ruralPopulation: "ग्रामीण जनसंख्या",
+                    sexRatio: "लिंग अनुपात (प्रति 1000 पुरुष)",
+                    literacyRate: "साक्षरता दर"
+                },
+                tableHeaders: {
+                    rank: "रैंक",
+                    villageName: "गांव का नाम",
+                    population: "जनसंख्या", 
+                    category: "श्रेणी",
+                    strategicValue: "रणनीतिक मूल्य",
+                    primaryTarget: "प्राथमिक लक्ष्य",
+                    secondaryTarget: "द्वितीयक लक्ष्य", 
+                    tertiaryTarget: "तृतीयक लक्ष्य"
+                }
+            }
+        };
 
-    ## Citation
-    Anand, V. (2025). Comprehensive Agricultural Survey Report: Pehowa Tehsil, Kurukshetra District, Haryana. Anand Agro Farms Research Division. Retrieved from https://aaf.vipulanand.in
+        function changeLanguage() {
+            const lang = document.getElementById('language').value;
+            const translation = translations[lang];
+            
+            if (!translation) return;
+            
+            // Update document language
+            document.documentElement.setAttribute('lang', lang);
+            document.body.setAttribute('lang', lang);
+            
+            // Update header
+            document.querySelector('header h1').textContent = translation.title;
+            document.querySelector('header p').textContent = translation.subtitle;
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const navKeys = ['research', 'summary', 'villages', 'agriculture', 'demographics', 'strategy', 'references'];
+            navLinks.forEach((link, index) => {
+                if (navKeys[index] && translation.nav[navKeys[index]]) {
+                    link.textContent = translation.nav[navKeys[index]];
+                }
+            });
+            
+            // Update section headings
+            const sections = {
+                '#research-credentials h2': 'researchCredentials',
+                '#executive-summary h2': 'executiveSummary', 
+                '#administrative-overview h2': 'administrativeOverview',
+                '#agricultural-infrastructure h2': 'agriculturalInfrastructure',
+                '#demographic-analysis h2': 'demographicAnalysis',
+                '#strategic-recommendations h2': 'strategicRecommendations',
+                '#bibliography h2': 'bibliography'
+            };
+            
+            Object.entries(sections).forEach(([selector, key]) => {
+                const element = document.querySelector(selector);
+                if (element && translation.sections[key]) {
+                    element.textContent = translation.sections[key];
+                }
+            });
 
-    ## Contact Information
-    **Principal Investigator:** Vipul Anand  
-    **Organization:** Anand Agro Farms (AAF)  
-    **Email:** aaf@vipulanand.in  
-    **Website:** https://aaf.vipulanand.in/research  
-    **Phone:** +91 9896918475
+            // Update sub-headings and content
+            const contentElements = {
+                '#research-credentials h3:nth-of-type(1)': 'principalInvestigator',
+                '#research-credentials h4:nth-of-type(1)': 'educationalBackground',
+                '#research-credentials h4:nth-of-type(2)': 'professionalExperience', 
+                '#research-credentials h4:nth-of-type(3)': 'contactInformation',
+                '#research-credentials h3:nth-of-type(2)': 'researchMethodology',
+                '#executive-summary h3:nth-of-type(1)': 'keyFindings',
+                '#executive-summary h4:nth-of-type(1)': 'villageDemographics',
+                '#executive-summary h4:nth-of-type(2)': 'agriculturalProfile',
+                '#executive-summary h4:nth-of-type(3)': 'economicIndicators',
+                '#executive-summary h4:nth-of-type(4)': 'mechanizationInfra',
+                '#administrative-overview h3:nth-of-type(1)': 'basicInfo',
+                '#administrative-overview h3:nth-of-type(2)': 'majorVillages',
+                '#agricultural-infrastructure h3:nth-of-type(1)': 'landUse',
+                '#agricultural-infrastructure h3:nth-of-type(2)': 'primaryCrops',
+                '#demographic-analysis h3:nth-of-type(1)': 'populationDemo',
+                '#demographic-analysis h3:nth-of-type(2)': 'religiousCaste',
+                '#strategic-recommendations h3:nth-of-type(1)': 'tier1Villages',
+                '#strategic-recommendations h3:nth-of-type(2)': 'tier2Villages',
+                '#strategic-recommendations h3:nth-of-type(3)': 'implementationStrategy',
+                '#strategic-recommendations h3:nth-of-type(4)': 'techIntegration',
+                '#bibliography h3:nth-of-type(1)': 'primarySources',
+                '#bibliography h4:nth-of-type(1)': 'govPublications'
+            };
 
-    This comprehensive research report serves as a foundational document for strategic decision-making in agricultural technology implementation and investment planning in North India's agricultural regions.
-    -->
+            Object.entries(contentElements).forEach(([selector, key]) => {
+                const element = document.querySelector(selector);
+                if (element && translation.content[key]) {
+                    element.textContent = translation.content[key];
+                }
+            });
+
+            // Update table headers
+            const tableHeaders = document.querySelectorAll('th');
+            const headerKeys = ['rank', 'villageName', 'population', 'category', 'strategicValue'];
+            tableHeaders.forEach((header, index) => {
+                if (headerKeys[index] && translation.tableHeaders[headerKeys[index]]) {
+                    header.textContent = translation.tableHeaders[headerKeys[index]];
+                }
+            });
+
+            // Update table data for strategic values
+            const strategicValueCells = document.querySelectorAll('td:nth-child(5)');
+            strategicValueCells.forEach(cell => {
+                if (cell.textContent.includes('Primary Target')) {
+                    cell.textContent = translation.tableHeaders.primaryTarget;
+                } else if (cell.textContent.includes('Secondary Target')) {
+                    cell.textContent = translation.tableHeaders.secondaryTarget;
+                } else if (cell.textContent.includes('Tertiary Target')) {
+                    cell.textContent = translation.tableHeaders.tertiaryTarget;
+                }
+            });
+            
+            // Update stats labels
+            const statLabels = document.querySelectorAll('.stat-label');
+            const statKeys = ['villagesSurveyed', 'totalPopulation', 'irrigationCoverage', 'croppingIntensity', 
+                             'totalPopulation', 'ruralPopulation', 'sexRatio', 'literacyRate'];
+            
+            statLabels.forEach((label, index) => {
+                if (statKeys[index] && translation.stats[statKeys[index]]) {
+                    label.textContent = translation.stats[statKeys[index]];
+                }
+            });
+            
+            // Update font controls
+            const fontButtons = document.querySelectorAll('.btn');
+            fontButtons.forEach(btn => {
+                if (btn.textContent === 'A+' || btn.textContent === 'अ+') {
+                    btn.textContent = translation.controls.fontIncrease;
+                } else if (btn.textContent === 'A-' || btn.textContent === 'अ-') {
+                    btn.textContent = translation.controls.fontDecrease;
+                }
+            });
+
+            // Update specific content sections visibility
+            const englishContent = document.querySelectorAll('.content-text');
+            const hindiContent = document.querySelectorAll('.content-text-hindi');
+            
+            if (lang === 'hi') {
+                englishContent.forEach(el => el.style.display = 'none');
+                hindiContent.forEach(el => el.style.display = 'block');
+            } else {
+                englishContent.forEach(el => el.style.display = 'block');
+                hindiContent.forEach(el => el.style.display = 'none');
+            }
+
+            // Update specific content paragraphs for key sections
+            if (lang === 'hi') {
+                // Update research period
+                const researchPeriodElement = document.querySelector('#research-credentials p:nth-of-type(2)');
+                if (researchPeriodElement && researchPeriodElement.textContent.includes('Research Period')) {
+                    researchPeriodElement.innerHTML = '<strong>अनुसंधान अवधि:</strong> जनवरी 2025 - मार्च 2025';
+                }
+
+                // Update contact info
+                const contactElement = document.querySelector('#research-credentials h4:nth-of-type(3) + p');
+                if (contactElement) {
+                    contactElement.innerHTML = '📧 ईमेल: <a href="mailto:aaf@vipulanand.in">aaf@vipulanand.in</a><br>🌐 वेबसाइट: <a href="https://aaf.vipulanand.in/research/">https://aaf.vipulanand.in/research/</a>';
+                }
+
+                // Update Vipul Anand info
+                const vipulInfoElement = document.querySelector('#research-credentials h3 + p');
+                if (vipulInfoElement) {
+                    vipulInfoElement.innerHTML = translation.content.vipulAnandInfo;
+                }
+            } else {
+                // Reset to English
+                const researchPeriodElement = document.querySelector('#research-credentials p:nth-of-type(2)');
+                if (researchPeriodElement) {
+                    researchPeriodElement.innerHTML = '<strong>Research Period:</strong> January 2025 - March 2025';
+                }
+
+                const contactElement = document.querySelector('#research-credentials h4:nth-of-type(3) + p');
+                if (contactElement) {
+                    contactElement.innerHTML = '📧 Email: <a href="mailto:aaf@vipulanand.in">aaf@vipulanand.in</a><br>🌐 Website: <a href="https://aaf.vipulanand.in/research/">https://aaf.vipulanand.in/research/</a>';
+                }
+
+                const vipulInfoElement = document.querySelector('#research-credentials h3 + p');
+                if (vipulInfoElement) {
+                    vipulInfoElement.innerHTML = '<strong>Vipul Anand</strong><br>Owner, Anand Agro Farms (AAF 1993-present)<br>Location: Kherishishgran, Pehowa, Kurukshetra, Haryana<br>Specialization: Rural Employment Research and Application Development';
+                }
+            }
+            
+            // Save language preference
+            localStorage.setItem('language', lang);
+        }
+        
+        // Load saved language
+        function loadLanguage() {
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.getElementById('language').value = savedLang;
+            changeLanguage();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            loadFontSize();
+            loadLanguage();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
