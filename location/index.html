@@ -293,24 +293,19 @@ update();
    Pan & zoom (background only)
 ========================= */
 let tz = 1, tx = 0, ty = 0;
-// Persist/restore view so user pan/zoom is remembered
+// Save view during session, but always start centered on page load
 const VIEW_KEY = 'indiaExplorerView';
 let _saveTO = null;
+let initialLoadComplete = false;
+
 function saveView(){
+  // Only save after initial load is complete
+  if(!initialLoadComplete) return;
   try { localStorage.setItem(VIEW_KEY, JSON.stringify({tx,ty,tz})); } catch {}
 }
 function scheduleSave(){
   clearTimeout(_saveTO);
   _saveTO = setTimeout(saveView, 150);
-}
-function loadView(){
-  try {
-    const v = JSON.parse(localStorage.getItem(VIEW_KEY) || 'null');
-    if(v && isFinite(v.tx) && isFinite(v.ty) && isFinite(v.tz)){
-      tx = v.tx; ty = v.ty; tz = v.tz; applyTransform(); return true;
-    }
-  } catch {}
-  return false;
 }
 function applyTransform(){
   viewport.setAttribute("transform", `translate(${tx},${ty}) scale(${tz})`);
@@ -365,17 +360,32 @@ function fitToScreen(){
   const vw = svg.clientWidth;
   const vh = svg.clientHeight;
   if (!bb || !isFinite(bb.width) || !isFinite(bb.height)) return;
-  // More zoomed in for better mobile/reading glasses visibility
-  // Changed from 0.85 to 0.5 for closer zoom
-  const scale = Math.max(0.5, Math.min(2.5, 0.5 / Math.max(bb.width/vw, bb.height/vh)));
+  
+  // Calculate scale to fit content with padding
+  const scaleX = (vw * 0.5) / bb.width;
+  const scaleY = (vh * 0.5) / bb.height;
+  const scale = Math.max(0.5, Math.min(2.5, Math.min(scaleX, scaleY)));
+  
   tz = scale;
-  tx = (vw - scale * (bb.x + bb.width/2)) / 2 + vw/2;
-  ty = (vh - scale * (bb.y + bb.height/2)) / 2 + vh/2;
+  
+  // Center the content in viewport
+  const scaledWidth = bb.width * scale;
+  const scaledHeight = bb.height * scale;
+  const centerX = bb.x + bb.width / 2;
+  const centerY = bb.y + bb.height / 2;
+  
+  tx = vw / 2 - centerX * scale;
+  ty = vh / 2 - centerY * scale;
+  
   applyTransform();
 }
 
-// initial view: restore last view if available, else fit
-if(!loadView()) setTimeout(fitToScreen, 50);
+// initial view: ALWAYS center on first load, ignore saved view
+setTimeout(() => {
+  fitToScreen();
+  initialLoadComplete = true; // Now start saving view changes
+  console.log('🎯 India node centered on screen');
+}, 100);
 
 /* =========================
    Controls
