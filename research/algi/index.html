@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farm Training • Good vs Bad Growth • Identification & Storage Safety</title>
+  <meta name="description" content="Training poster for field staff: differentiate beneficial algae/bacteria in paddy from harmful ergot in cereals; includes SOP for safe storage and disposal." />
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --panel:#111827; /* gray-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --accent:#22c55e; /* green-500 */
+      --warn:#ef4444; /* red-500 */
+      --card:#111827;
+      --ok:#16a34a; /* green-600 */
+      --bad:#dc2626; /* red-600 */
+      --border:#1f2937; /* gray-800 */
+      --ring:#334155; /* slate-700 */
+      --link:#38bdf8; /* sky-400 */
+      --print-text:#111827;
+      --print-bg:#ffffff;
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial; color:var(--text); background:radial-gradient(1200px 800px at 20% -10%, #1f2937 0%, var(--bg) 60%); 
+    }
+    .wrap{max-width:1100px; margin:auto; padding:24px;}
+    header{display:flex; gap:16px; align-items:center; justify-content:space-between; margin-bottom:16px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:42px;height:42px;border-radius:12px;background:conic-gradient(from 30deg, #22c55e, #38bdf8, #a78bfa, #22c55e); box-shadow:0 0 0 3px #0b1220 inset}
+    h1{font-size:clamp(22px,3.5vw,34px); margin:0}
+    .tag{font-size:12px;color:var(--muted)}
+    .controls{display:flex; gap:8px; flex-wrap:wrap}
+    button, .btn{background:#0b1220;color:#e5e7eb;border:1px solid var(--ring);padding:10px 14px;border-radius:12px;cursor:pointer}
+    button:hover{border-color:#475569}
+    .grid{display:grid; gap:16px}
+    .two{grid-template-columns:repeat(2, minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3, minmax(0,1fr))}
+    @media (max-width:900px){.two,.three{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)); border:1px solid var(--border); border-radius:16px; padding:16px}
+    .card h2{margin:0 0 8px 0; font-size:clamp(18px,2.5vw,22px)}
+    .card h3{margin:8px 0 8px; font-size:18px}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); font-size:12px; color:var(--muted)}
+    .ok{border-color:rgba(34,197,94,.35); color:#bbf7d0; background:rgba(34,197,94,.08)}
+    .bad{border-color:rgba(239,68,68,.35); color:#fecaca; background:rgba(239,68,68,.08)}
+    .row{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .pill{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); color:var(--muted)}
+    .table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:12px; border:1px solid var(--border)}
+    .table thead th{background:#0b1220; color:#cbd5e1; padding:12px; text-align:left; font-weight:600; position:sticky; top:0}
+    .table tbody td{padding:12px; border-top:1px solid var(--border); vertical-align:top}
+    .callout{border-left:4px solid var(--accent); padding:12px 14px; background:rgba(34,197,94,.06); border-radius:8px}
+    .danger{border-left-color:var(--warn); background:rgba(239,68,68,.06)}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; color:#cbd5e1}
+    .mt{margin-top:16px}
+    .mb{margin-bottom:16px}
+    .sr{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    .footer{margin:32px 0 16px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; align-items:center}
+    .checklist li{margin:6px 0}
+    .photo-slot{display:grid; place-items:center; border:2px dashed var(--ring); border-radius:12px; min-height:140px; color:var(--muted)}
+    .legend{display:flex; gap:8px; flex-wrap:wrap}
+    .legend span{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--muted)}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot-ok{background:var(--ok)}
+    .dot-bad{background:var(--bad)}
+    .lang-hi [data-i18n], .lang-hi [data-th]{display:none}
+    .lang-hi [data-i18n="hi"], .lang-hi [data-th="hi"]{display:initial}
+    .lang-en [data-i18n="en"], .lang-en [data-th="en"]{display:initial}
+    .print{border:1px dashed var(--ring); padding:10px; border-radius:10px; font-size:13px; color:var(--muted)}
+    @media print{
+      body{background:var(--print-bg); color:var(--print-text)}
+      .card, .table, .print, .btn, button{box-shadow:none}
+      .controls{display:none}
+      a{color:#000}
+    }
+  </style>
+</head>
+<body class="lang-en">
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Farm Training • Good vs Bad Growth</h1>
+          <div class="tag">Differentiate beneficial algae/bacteria in paddy from harmful ergot in cereals • ID + Storage Safety (Printable)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="langToggle" title="हिंदी / English">हिंदी / English</button>
+        <button id="printBtn" title="Print / Save as PDF">Print</button>
+      </div>
+    </header>
+
+    <!-- Quick Legend -->
+    <div class="legend mb">
+      <span><span class="dot dot-ok"></span><strong>Beneficial</strong> (Algae/Bacteria)</span>
+      <span><span class="dot dot-bad"></span><strong>Harmful</strong> (Ergot)</span>
+    </div>
+
+    <!-- Comparison Table -->
+    <section class="card mb" aria-labelledby="cmp">
+      <h2 id="cmp" data-th="en">Comparison — At a Glance</h2>
+      <h2 id="cmp-hi" data-th="hi">तुलना — एक नज़र में</h2>
+      <table class="table" role="table" aria-describedby="cmp">
+        <thead>
+          <tr>
+            <th data-i18n="en">Feature</th>
+            <th data-i18n="en">Helpful Algae/Bacteria (Paddy)</th>
+            <th data-i18n="en">Harmful Ergot (*Claviceps purpurea*)</th>
+            <th data-i18n="hi">विशेषता</th>
+            <th data-i18n="hi">लाभकारी शैवाल/बैक्टीरिया (धान)</th>
+            <th data-i18n="hi">हानिकारक एरगॉट (*Claviceps purpurea*)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="en">Appearance</td>
+            <td data-i18n="en"><span class="badge ok">Green films/mats on water</span></td>
+            <td data-i18n="en"><span class="badge bad">Purple–black hard bodies (sclerotia)</span></td>
+            <td data-i18n="hi">दिखावट</td>
+            <td data-i18n="hi"><span class="badge ok">पानी पर हरे परत/चटाई</span></td>
+            <td data-i18n="hi"><span class="badge bad">बैंगनी–काले कठोर दाने (स्क्लेरोशिया)</span></td>
+          </tr>
+          <tr>
+            <td data-i18n="en">Where seen</td>
+            <td data-i18n="en">Paddy water surface after inoculation</td>
+            <td data-i18n="en">Cereal ears & stored grain (wheat/rye/barley)</td>
+            <td data-i18n="hi">कहां दिखता है</td>
+            <td data-i18n="hi">धान के पानी की सतह (इनोकुलन के बाद)</td>
+            <td data-i18n="hi">बालियों/भंडारण में गेहूं/राई/जौ</td>
+          </tr>
+          <tr>
+            <td data-i18n="en">Texture</td>
+            <td data-i18n="en">Soft/slimy, breaks easily</td>
+            <td data-i18n="en">Hard/woody, elongated, replaces grain</td>
+            <td data-i18n="hi">स्पर्श</td>
+            <td data-i18n="hi">नरम/चिकना, आसानी से टूटता</td>
+            <td data-i18n="hi">कठोर/लकड़ी जैसा, लम्बा, दाने की जगह</td>
+          </tr>
+          <tr>
+            <td data-i18n="en">Impact</td>
+            <td data-i18n="en">Fixes nitrogen, improves tillering</td>
+            <td data-i18n="en">Toxic, reduces germination & food safety</td>
+            <td data-i18n="hi">प्रभाव</td>
+            <td data-i18n="hi">नाइट्रोजन स्थिरीकरण, अधिक टिलर</td>
+            <td data-i18n="hi">विषैला, अंकुरण/खाद्य सुरक्षा घटती</td>
+          </tr>
+          <tr>
+            <td data-i18n="en">Action</td>
+            <td data-i18n="en">Encourage as per KVK guidance</td>
+            <td data-i18n="en">Identify, segregate, destroy (do not feed)</td>
+            <td data-i18n="hi">कदम</td>
+            <td data-i18n="hi">केवीके निर्देशानुसार बढ़ावा दें</td>
+            <td data-i18n="hi">पहचानें, अलग करें, नष्ट करें (चारे में न दें)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="print mt">Tip: Use your browser’s <span class="kbd">Print → Save as PDF</span> to create a poster for the storage room.</div>
+    </section>
+
+    <!-- Visual ID Cards -->
+    <section class="grid two mb" aria-labelledby="visid">
+      <div class="card">
+        <h3 data-th="en">VISUAL ID — Beneficial (Algae/Bacteria)</h3>
+        <h3 data-th="hi">दृश्य पहचान — लाभकारी (शैवाल/बैक्टीरिया)</h3>
+        <div class="row">
+          <span class="badge ok">Green • Paddy water</span>
+          <span class="pill">Cyanobacteria/Azolla mats</span>
+        </div>
+        <div class="photo-slot mt" aria-label="Add field photo">Place photo of green algal mat here</div>
+        <ul class="checklist mt">
+          <li data-i18n="en">Seen as green film/mat on flooded fields</li>
+          <li data-i18n="en">Breaks apart easily when stirred</li>
+          <li data-i18n="en">Improves nitrogen, supports tillers</li>
+          <li data-i18n="hi">भरे खेतों पर हरी परत/चटाई</li>
+          <li data-i18n="hi">हिलाने पर आसानी से टूटती</li>
+          <li data-i18n="hi">नाइट्रोजन बढ़े, टिलर बेहतर</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-th="en">VISUAL ID — Harmful (Ergot on Wheat)</h3>
+        <h3 data-th="hi">दृश्य पहचान — हानिकारक (गेहूं में एरगॉट)</h3>
+        <div class="row">
+          <span class="badge bad">Purple/Black • Sclerotia</span>
+          <span class="pill">Hard • Elongated • Replaces grain</span>
+        </div>
+        <div class="photo-slot mt" aria-label="Add storage/ear photo">Place photo of purple-black sclerotia here</div>
+        <ul class="checklist mt">
+          <li data-i18n="en">Appears as hard, dark bodies replacing kernels</li>
+          <li data-i18n="en">Often longer & darker than wheat grains</li>
+          <li data-i18n="en">Treat as toxic: segregate & destroy</li>
+          <li data-i18n="hi">कठोर, काले/बैंगनी दाने जो असली दाने की जगह</li>
+          <li data-i18n="hi">गेहूं से लम्बे/गहरे रंग के</li>
+          <li data-i18n="hi">विषैला: अलग करें व नष्ट करें</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SOP: Storage Prevention & Response -->
+    <section class="card mb" aria-labelledby="sop">
+      <h2 id="sop" data-th="en">SOP — Storage Prevention & Safe Handling</h2>
+      <h2 id="sop-hi" data-th="hi">मानक कार्यविधि — भंडारण रोकथाम व सुरक्षित प्रबंधन</h2>
+      <div class="grid two">
+        <div>
+          <h3 data-th="en">Before Storage (Post‑harvest)</h3>
+          <h3 data-th="hi">भंडारण से पहले (कटाई के बाद)</h3>
+          <ul class="checklist">
+            <li data-i18n="en">Sun-dry grains 2–3 days; target ≤ 12% moisture</li>
+            <li data-i18n="en">Clean bins/rooms; remove old residues; lime/neem wash</li>
+            <li data-i18n="en">Use pallets; keep 6–8" away from walls</li>
+            <li data-i18n="hi">2–3 दिन धूप में सुखाएं; नमी ≤ 12%</li>
+            <li data-i18n="hi">कोठार/कमरे साफ; पुराना अंश हटाएं; चूना/नीम धोवन</li>
+            <li data-i18n="hi">पैलेट पर रखें; दीवार से 6–8" दूरी</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-th="en">During Storage (Monsoon Watch)</h3>
+          <h3 data-th="hi">भंडारण के दौरान (मानसून निगरानी)</h3>
+          <ul class="checklist">
+            <li data-i18n="en">Inspect monthly for clumps, odor, purple-black bodies</li>
+            <li data-i18n="en">Ventilate on dry days; avoid damp jute on floor</li>
+            <li data-i18n="en">If ergot seen: isolate lot; do not mix</li>
+            <li data-i18n="hi">गांठ, गंध, काले/बैंगनी दानों की मासिक जांच</li>
+            <li data-i18n="hi">सूखे दिनों में हवादार; गीली जूट फर्श पर नहीं</li>
+            <li data-i18n="hi">एरगॉट दिखे: खेप अलग; मिश्रण न करें</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-th="en">If Suspected Ergot Found</h3>
+          <h3 data-th="hi">यदि एरगॉट संदिग्ध दिखे</h3>
+          <div class="callout danger">
+            <ul class="checklist">
+              <li data-i18n="en">Wear gloves & mask. Avoid dust.</li>
+              <li data-i18n="en">Segregate, double‑bag, label “Do Not Use”</li>
+              <li data-i18n="en">Burn or bury deep per local guidance</li>
+              <li data-i18n="en">Disinfect container; wash hands/tools</li>
+              <li data-i18n="hi">दस्ताने/मास्क पहनें; धूल से बचें</li>
+              <li data-i18n="hi">अलग करें, दो थैलों में बंद करें, “उपयोग न करें” लिखें</li>
+              <li data-i18n="hi">स्थानीय निर्देशानुसार जलाएं/गहरा गाड़ें</li>
+              <li data-i18n="hi">डिब्बा/उपकरण कीटाणुरहित; हाथ धोएं</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 data-th="en">Never Do</h3>
+          <h3 data-th="hi">कभी न करें</h3>
+          <ul class="checklist">
+            <li data-i18n="en">Do not consume or feed contaminated grain</li>
+            <li data-i18n="en">Do not compost ergot sclerotia</li>
+            <li data-i18n="en">Do not store fresh, damp grain in closed rooms</li>
+            <li data-i18n="hi">दूषित अनाज न खाएं/न खिलाएं</li>
+            <li data-i18n="hi">एरगॉट स्क्लेरोशिया को कम्पोस्ट में न डालें</li>
+            <li data-i18n="hi">गीला नया अनाज बंद कमरे में न रखें</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seasonal Calendar -->
+    <section class="card mb" aria-labelledby="calendar">
+      <h2 id="calendar" data-th="en">Seasonal Risk & Cleaning Calendar</h2>
+      <h2 id="calendar-hi" data-th="hi">मौसमी जोखिम व सफाई कैलेंडर</h2>
+      <div class="grid three">
+        <div class="card" style="background:rgba(34,197,94,.05)">
+          <h3 data-th="en">March–April</h3>
+          <h3 data-th="hi">मार्च–अप्रैल</h3>
+          <ul class="checklist">
+            <li data-i18n="en">Annual deep clean & sun‑sanitize storage</li>
+            <li data-i18n="en">Repair leaks; paint lime wash</li>
+            <li data-i18n="hi">वार्षिक गहरी सफाई व धूप‑सैनिटाइज</li>
+            <li data-i18n="hi">रिसाव ठीक करें; चूना पुताई</li>
+          </ul>
+        </div>
+        <div class="card" style="background:rgba(56,189,248,.05)">
+          <h3 data-th="en">June–September (Monsoon)</h3>
+          <h3 data-th="hi">जून–सितंबर (मानसून)</h3>
+          <ul class="checklist">
+            <li data-i18n="en">Monthly inspection & ventilation</li>
+            <li data-i18n="en">Watch for purple/black bodies</li>
+            <li data-i18n="hi">मासिक निरीक्षण व वेंटिलेशन</li>
+            <li data-i18n="hi">बैंगनी/काले दानों पर नज़र</li>
+          </ul>
+        </div>
+        <div class="card" style="background:rgba(167,139,250,.06)">
+          <h3 data-th="en">Post‑Harvest</h3>
+          <h3 data-th="hi">कटाई के बाद</h3>
+          <ul class="checklist">
+            <li data-i18n="en">Sun‑dry to ≤12% moisture</li>
+            <li data-i18n="en">Sieve/sort out sclerotia before storage</li>
+            <li data-i18n="hi">नमी ≤12% तक धूप में सुखाएं</li>
+            <li data-i18n="hi">भंडारण से पहले स्क्लेरोशिया छांटें</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Quiz (optional, tracks locally) -->
+    <section class="card mb" aria-labelledby="quiz">
+      <h2 id="quiz" data-th="en">Quick Check — Staff Quiz</h2>
+      <h2 id="quiz-hi" data-th="hi">त्वरित जांच — स्टाफ प्रश्नोत्तरी</h2>
+      <p class="tag" data-i18n="en">No data leaves this device. Results saved in this browser only.</p>
+      <p class="tag" data-i18n="hi">यह डेटा डिवाइस से बाहर नहीं जाता। परिणाम इसी ब्राउज़र में सुरक्षित रहते हैं।</p>
+      <div id="qbox" class="mt"></div>
+      <div class="row mt">
+        <button id="submitQuiz">Submit</button>
+        <button id="resetQuiz" class="btn">Reset</button>
+        <span id="quizStatus" class="tag"></span>
+      </div>
+    </section>
+
+    <section class="card callout mt" aria-live="polite">
+      <strong data-i18n="en">Safety note:</strong>
+      <span data-i18n="en">This page trains identification and safe storage only. It does not provide cultivation methods for harmful fungi.</span>
+      <strong data-i18n="hi">सुरक्षा नोट:</strong>
+      <span data-i18n="hi">यह पेज केवल पहचान और सुरक्षित भंडारण सिखाता है। हानिकारक फफूंद की खेती संबंधी निर्देश यहाँ शामिल नहीं हैं।</span>
+    </section>
+
+    <div class="footer">
+      <div>© Anand Agro Farms — Training Module</div>
+      <div><a href="#" id="clearLocal" title="Clear saved quiz data">Clear local data</a></div>
+    </div>
+  </div>
+
+  <script>
+    // Language toggle (Hindi/English)
+    (function(){
+      const body = document.body;
+      const btn = document.getElementById('langToggle');
+      const KEY = 'farm-lang';
+      const saved = localStorage.getItem(KEY) || 'en';
+      body.classList.remove('lang-en','lang-hi');
+      body.classList.add('lang-' + saved);
+      btn.addEventListener('click', ()=>{
+        const now = body.classList.contains('lang-en') ? 'hi' : 'en';
+        body.classList.remove('lang-en','lang-hi');
+        body.classList.add('lang-' + now);
+        localStorage.setItem(KEY, now);
+      });
+    })();
+
+    // Print
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+
+    // Clear local data link
+    document.getElementById('clearLocal').addEventListener('click', (e)=>{
+      e.preventDefault();
+      ['farm-lang','farm-quiz'].forEach(k=>localStorage.removeItem(k));
+      document.getElementById('quizStatus').textContent = 'Local data cleared';
+    });
+
+    // Quiz (simple, 4 questions)
+    (function(){
+      const questions = [
+        {q_en:'Green mat on paddy water is usually…', q_hi:'धान के पानी पर हरी परत सामान्यतः…',
+         a_en:['Beneficial algae/bacteria','Ergot sclerotia','Rust disease'],
+         a_hi:['लाभकारी शैवाल/बैक्टीरिया','एरगॉट स्क्लेरोशिया','रस्ट रोग'], correct:0},
+        {q_en:'Purple–black hard bodies in wheat storage indicate…', q_hi:'गेहूं भंडारण में बैंगनी‑काले कठोर दाने संकेत हैं…',
+         a_en:['Good seed vigor','Ergot contamination','Normal discoloration'],
+         a_hi:['अच्छी अंकुर शक्ति','एरगॉट संदूषण','सामान्य रंग परिवर्तन'], correct:1},
+        {q_en:'Target grain moisture for safe storage is ≤ …', q_hi:'सुरक्षित भंडारण हेतु लक्षित नमी ≤ …',
+         a_en:['18%','12%','25%'], a_hi:['18%','12%','25%'], correct:1},
+        {q_en:'If ergot is suspected you should…', q_hi:'यदि एरगॉट संदिग्ध हो तो आपको…',
+         a_en:['Mix with clean grain','Feed to cattle','Segregate & destroy'],
+         a_hi:['स्वच्छ अनाज में मिला दें','पशुओं को खिला दें','अलग करें व नष्ट करें'], correct:2}
+      ];
+      const KEY='farm-quiz';
+      const box = document.getElementById('qbox');
+      const status = document.getElementById('quizStatus');
+      const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+
+      function render(){
+        const isHI = document.body.classList.contains('lang-hi');
+        box.innerHTML = '';
+        questions.forEach((it, idx)=>{
+          const card = document.createElement('div');
+          card.className = 'card';
+          const q = document.createElement('div');
+          q.style.fontWeight = '600';
+          q.textContent = isHI ? it.q_hi : it.q_en;
+          card.appendChild(q);
+          const group = document.createElement('div');
+          group.className = 'mt';
+          it[(isHI?'a_hi':'a_en')].forEach((opt, j)=>{
+            const id = `q${idx}_${j}`;
+            const label = document.createElement('label');
+            label.style.display = 'block';
+            label.style.margin = '6px 0';
+            const input = document.createElement('input');
+            input.type='radio'; input.name='q'+idx; input.value=j; input.id=id;
+            if(saved[idx]===j) input.checked=true;
+            label.appendChild(input);
+            const span = document.createElement('span'); span.style.marginLeft='8px'; span.textContent=opt;
+            label.appendChild(span);
+            group.appendChild(label);
+          });
+          card.appendChild(group);
+          box.appendChild(card);
+        });
+      }
+
+      render();
+      // Re-render on language toggle
+      const obs = new MutationObserver(render);
+      obs.observe(document.body, {attributes:true, attributeFilter:['class']});
+
+      document.getElementById('submitQuiz').addEventListener('click', ()=>{
+        const answers = {};
+        let score=0;
+        questions.forEach((it, idx)=>{
+          const checked = document.querySelector(`input[name="q${idx}"]:checked`);
+          const val = checked? Number(checked.value) : -1;
+          answers[idx]=val;
+          if(val===it.correct) score++;
+        });
+        localStorage.setItem(KEY, JSON.stringify(answers));
+        status.textContent = `Score: ${score}/${questions.length} — saved locally`;
+      });
+
+      document.getElementById('resetQuiz').addEventListener('click', ()=>{
+        localStorage.removeItem(KEY);
+        status.textContent='Reset. Answer again.';
+        // Clear selections
+        document.querySelectorAll('#qbox input[type=radio]').forEach(i=> i.checked=false);
+      });
+    })();
+  </script>
+</body>
+</html>
