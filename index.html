@@ -13,19 +13,18 @@
 --accent:#7a5c3e;
 --accent-soft:#f0e7db;
 --line:#ded3c4;
---warn:#a1662f;
---ok:#4a6741;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+html,body{min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:transparent;line-height:1.5;margin:0}
 video#bg{
 position:fixed;top:0;left:0;width:100%;height:100%;
-object-fit:cover;z-index:-1;opacity:0.85;
+object-fit:cover;z-index:-2;opacity:1;
 }
 .overlay{
 position:relative;min-height:100vh;
-background:rgba(250,247,242,0.55);
+background:rgba(250,247,242,0.28);
 display:flex;flex-direction:column;
+z-index:1;
 }
 .breadcrumb{padding:1rem 1.25rem 0.5rem;font-size:0.85rem;color:var(--muted)}
 .breadcrumb a{color:var(--accent);text-decoration:none}
@@ -33,13 +32,13 @@ display:flex;flex-direction:column;
 main{max-width:720px;margin:0 auto;padding:1.5rem 1.25rem 3rem;width:100%}
 h1{font-family:Georgia,"Iowan Old Style",serif;font-size:2.1rem;line-height:1.2;margin:0.5rem 0 0.75rem}
 .location{font-size:1rem;color:var(--muted);margin-bottom:1.5rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.25rem;margin:1rem 0}
+.card{background:rgba(255,255,255,0.88);border:1px solid var(--line);border-radius:10px;padding:1.25rem;margin:1rem 0}
 h2{font-family:Georgia,"Iowan Old Style",serif;font-size:1.35rem;margin:0 0 0.75rem;color:var(--accent)}
 p{margin:0.6rem 0}
 ul,ol{margin:0.6rem 0 0.6rem 1.25rem}
 .links a{color:var(--accent);text-decoration:none}
 .links a:hover{text-decoration:underline}
-footer{margin-top:auto;padding:1.5rem 1.25rem;border-top:1px solid var(--line);font-size:0.85rem;color:var(--muted);background:rgba(255,255,255,0.7)}
+footer{margin-top:auto;padding:1.5rem 1.25rem;border-top:1px solid var(--line);font-size:0.85rem;color:var(--muted);background:rgba(255,255,255,0.85)}
 .ecosystem{margin-bottom:0.75rem}
 .ecosystem a{color:var(--accent);text-decoration:none;margin:0 0.4rem}
 @media(min-width:720px){
@@ -49,7 +48,7 @@ main{padding:2.5rem 1.5rem 4rem}
 </style>
 </head>
 <body>
-<video id="bg" autoplay muted loop playsinline>
+<video id="bg" autoplay muted loop playsinline poster="">
 <source src="anand-agro-farms-bg.mp4" type="video/mp4">
 </video>
 <div class="overlay">
