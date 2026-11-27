@@ -18,6 +18,15 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+video#bg{
+position:fixed;top:0;left:0;width:100%;height:100%;
+object-fit:cover;z-index:-1;opacity:0.85;
+}
+.overlay{
+position:relative;min-height:100vh;
+background:rgba(250,247,242,0.55);
+display:flex;flex-direction:column;
+}
 .breadcrumb{padding:1rem 1.25rem 0.5rem;font-size:0.85rem;color:var(--muted)}
 .breadcrumb a{color:var(--accent);text-decoration:none}
 .breadcrumb a:hover{text-decoration:underline}
@@ -30,7 +39,7 @@ p{margin:0.6rem 0}
 ul,ol{margin:0.6rem 0 0.6rem 1.25rem}
 .links a{color:var(--accent);text-decoration:none}
 .links a:hover{text-decoration:underline}
-footer{margin-top:2rem;padding:1.5rem 1.25rem;border-top:1px solid var(--line);font-size:0.85rem;color:var(--muted);background:rgba(255,255,255,0.8)}
+footer{margin-top:auto;padding:1.5rem 1.25rem;border-top:1px solid var(--line);font-size:0.85rem;color:var(--muted);background:rgba(255,255,255,0.7)}
 .ecosystem{margin-bottom:0.75rem}
 .ecosystem a{color:var(--accent);text-decoration:none;margin:0 0.4rem}
 @media(min-width:720px){
@@ -40,6 +49,10 @@ main{padding:2.5rem 1.5rem 4rem}
 </style>
 </head>
 <body>
+<video id="bg" autoplay muted loop playsinline>
+<source src="anand-agro-farms-bg.mp4" type="video/mp4">
+</video>
+<div class="overlay">
 <div class="breadcrumb">
 vipulanand.in › Agri › Anand Agro Farms
 </div>
@@ -85,8 +98,10 @@ vipulanand.in · <a href="https://benf.in">benf.in</a> · <a href="https://ride.
 <ol>
 <li>Anand Agro Farms internal planning notes and field observations. T1 primary.</li>
 <li>Public GitHub catalogue and subdomain sites under vipulanand.in. T1 primary.</li>
+<li>Background video asset (owner-generated). T1 primary.</li>
 </ol>
 <p class="tier">Sources listed for transparency. Further expansion on biologicals, subsidies and financial models available on request.</p>
 </footer>
+</div>
 </body>
 </html>
